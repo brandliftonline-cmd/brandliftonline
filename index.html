@@ -1,0 +1,2596 @@
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brandlift | AI-Powered Digital Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon.png">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #050505;
+            color: #fafafa;
+            overflow-x: hidden;
+        }
+
+        /* Smooth Fade In Animations */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-up {
+            animation: fadeUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+            opacity: 0;
+        }
+
+        .delay-100 {
+            animation-delay: 0.1s;
+        }
+
+        .delay-200 {
+            animation-delay: 0.2s;
+        }
+
+        .delay-300 {
+            animation-delay: 0.3s;
+        }
+
+        /* Floating Animation */
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .delay-700 {
+            animation-delay: 0.7s;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #f97316;
+        }
+
+        /* Subtle Gradients */
+        .text-gradient {
+            background: linear-gradient(135deg, #fff 0%, #a1a1aa 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .text-gradient-orange {
+            background: linear-gradient(135deg, #f97316 0%, #fbbf24 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Background Grid */
+        .bg-grid {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+        }
+
+        /* Card Hover Glow */
+        .card-hover:hover {
+            box-shadow: 0 0 30px -10px rgba(249, 115, 22, 0.15);
+            border-color: rgba(249, 115, 22, 0.3);
+        }
+
+        /* --- NEW CYBER EFFECTS --- */
+
+        /* 1. Mouse-Tracking Glow */
+        .glow-effect {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .glow-effect::before {
+            content: '';
+            position: absolute;
+            top: var(--mouse-y, -50%);
+            left: var(--mouse-x, -50%);
+            width: 250px;
+            height: 250px;
+            background: radial-gradient(circle, rgba(249, 115, 22, 0.15) 0%, transparent 60%);
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .glow-effect:hover::before {
+            opacity: 1;
+        }
+
+        /* 2. AI Scanner */
+        .scan-line {
+            position: relative;
+            overflow: hidden;
+        }
+
+
+
+        /* 3. Glitch Effect (Cyber Security) */
+        .glitch-text {
+            position: relative;
+            display: inline-block;
+        }
+
+        .card-hover:hover .glitch-text::before,
+        .card-hover:hover .glitch-text::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: #09090b;
+            /* Match card bg */
+            clip: rect(0, 0, 0, 0);
+        }
+
+        .card-hover:hover .glitch-text::before {
+            left: -2px;
+            text-shadow: 1px 0 #22c55e;
+            /* Green-500 */
+            animation: glitch-anim-1 2s infinite linear alternate-reverse;
+        }
+
+        .card-hover:hover .glitch-text::after {
+            left: 2px;
+            text-shadow: -1px 0 #4ade80;
+            /* Green-400 */
+            animation: glitch-anim-2 3s infinite linear alternate-reverse;
+        }
+
+        @keyframes glitch-anim-1 {
+            0% {
+                clip: rect(20px, 9999px, 15px, 0);
+            }
+
+            20% {
+                clip: rect(60px, 9999px, 80px, 0);
+            }
+
+            40% {
+                clip: rect(10px, 9999px, 55px, 0);
+            }
+
+            60% {
+                clip: rect(85px, 9999px, 90px, 0);
+            }
+
+            80% {
+                clip: rect(35px, 9999px, 45px, 0);
+            }
+
+            100% {
+                clip: rect(70px, 9999px, 20px, 0);
+            }
+        }
+
+        @keyframes glitch-anim-2 {
+            0% {
+                clip: rect(15px, 9999px, 80px, 0);
+            }
+
+            20% {
+                clip: rect(75px, 9999px, 25px, 0);
+            }
+
+            40% {
+                clip: rect(10px, 9999px, 60px, 0);
+            }
+
+            60% {
+                clip: rect(50px, 9999px, 10px, 0);
+            }
+
+            80% {
+                clip: rect(30px, 9999px, 80px, 0);
+            }
+
+            100% {
+                clip: rect(85px, 9999px, 45px, 0);
+            }
+        }
+
+        /* 4. Data Pulse (Marketing) */
+        .data-bar {
+            width: 4px;
+            background: #f97316;
+            border-radius: 2px;
+            animation: dataPulse 1s ease-in-out infinite;
+        }
+
+        .data-bar:nth-child(1) {
+            height: 12px;
+            animation-delay: 0s;
+        }
+
+        .data-bar:nth-child(2) {
+            height: 18px;
+            animation-delay: 0.2s;
+        }
+
+        .data-bar:nth-child(3) {
+            height: 10px;
+            animation-delay: 0.4s;
+        }
+
+        @keyframes dataPulse {
+
+            0%,
+            100% {
+                transform: scaleY(1);
+                opacity: 0.5;
+            }
+
+            50% {
+                transform: scaleY(1.5);
+                opacity: 1;
+            }
+        }
+
+        /* 5. Typing Cursor (Web Dev) */
+        .typing-cursor::after {
+            content: '|';
+            animation: blink 1s step-end infinite;
+            color: #f97316;
+        }
+
+        @keyframes blink {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+        }
+
+        /* 6. AI Automation Sequence */
+        .auto-step {
+            transition: all 0.3s;
+        }
+
+        .card-hover:hover .auto-step {
+            animation: sequencePulse 2s infinite;
+        }
+
+        .auto-step:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .auto-step:nth-child(2) {
+            animation-delay: 0.5s;
+        }
+
+        .auto-step:nth-child(3) {
+            animation-delay: 1.0s;
+        }
+
+        .auto-step:nth-child(4) {
+            animation-delay: 1.5s;
+        }
+
+        @keyframes sequencePulse {
+
+            0%,
+            100% {
+                border-color: rgba(255, 255, 255, 0.05);
+                background: rgba(255, 255, 255, 0.05);
+            }
+
+            50% {
+                border-color: rgba(249, 115, 22, 0.5);
+                background: rgba(249, 115, 22, 0.1);
+                color: white;
+            }
+        }
+
+        /* 7. Security Lock Pulse */
+        .security-icon {
+            transition: all 0.3s ease;
+        }
+
+        .card-hover:hover .security-icon {
+            color: #22c55e !important;
+            /* Green */
+            filter: drop-shadow(0 0 8px rgba(34, 197, 94, 0.5));
+            animation: lockPulse 2s infinite ease-in-out;
+        }
+
+        @keyframes lockPulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+
+            0%,
+            20%,
+            40%,
+            60%,
+            80%,
+            100% {
+                transform: translateX(0);
+            }
+
+            10%,
+            30%,
+            50%,
+            70%,
+            90% {
+                transform: translateX(0);
+            }
+        }
+
+        /* 8. AI Bot Float */
+        .bot-icon {
+            transition: all 0.5s ease;
+        }
+
+        .card-hover:hover .bot-icon {
+            color: #f97316;
+            /* Orange */
+            animation: botFloat 3s ease-in-out infinite;
+            filter: drop-shadow(0 0 5px rgba(249, 115, 22, 0.5));
+        }
+
+        @keyframes botFloat {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-6px) rotate(5deg);
+            }
+        }
+
+        /* 9. Feature Icon Neuro-Activation */
+        .feature-icon-box {
+            transition: all 0.3s ease;
+        }
+
+        .feature-icon {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .card-hover:hover .feature-icon-box {
+            background-color: rgba(249, 115, 22, 0.15) !important;
+            border: 1px solid rgba(249, 115, 22, 0.3) !important;
+            box-shadow: 0 0 15px rgba(249, 115, 22, 0.1);
+        }
+
+        .card-hover:hover .feature-icon {
+            color: #f97316;
+            transform: scale(1.15);
+            filter: drop-shadow(0 0 4px rgba(249, 115, 22, 0.5));
+        }
+
+        /* Spin for CPU icon */
+        .card-hover:hover .feature-icon.icon-spin {
+            animation: spin 3s linear infinite;
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg) scale(1.15);
+            }
+
+            to {
+                transform: rotate(360deg) scale(1.15);
+            }
+        }
+
+        /* Cyber Scroll Reveal */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(30px) scale(0.98);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            filter: blur(4px);
+            will-change: transform, opacity, filter;
+        }
+
+        .is-visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            filter: blur(0);
+        }
+
+        /* Stagger delays for grid items */
+        .delay-100 {
+            transition-delay: 0.1s;
+        }
+
+        .delay-200 {
+            transition-delay: 0.2s;
+        }
+
+        .delay-300 {
+            transition-delay: 0.3s;
+        }
+
+        /* --- NEW REQUESTED EFFECTS (2, 3, 4) --- */
+
+        /* 2. Decryption Text Effect */
+        .decrypt-text {
+            font-family: 'Courier New', Courier, monospace;
+            /* Tech/Hacker vibe */
+            cursor: default;
+        }
+
+        /* 3. Holographic 3D Tilt */
+        .tilt-card {
+            transform-style: preserve-3d;
+            transform: perspective(1000px);
+        }
+
+        .tilt-content {
+            transform: translateZ(20px);
+            /* Pop out effect */
+        }
+
+        /* 4. Process Data Flow Beam */
+        .process-line-container {
+            position: relative;
+        }
+
+        .process-beam {
+            position: absolute;
+            top: 0;
+            left: -1px;
+            /* Align with border-l */
+            width: 2px;
+            height: 100px;
+            /* Length of the beam */
+            background: linear-gradient(to bottom, transparent, #f97316, transparent);
+            opacity: 0;
+            animation: beamDrop 3s infinite linear;
+            z-index: 10;
+        }
+
+        @media (min-width: 768px) {
+
+            /* For horizontal layout on Desktop if needed, but the current layout is grid/vertical mixed. 
+                Looking at line 972, it's border-l on mobile, border-t on desktop? 
+                Line 972: border-l border-white/10 ml-3 md:ml-0 md:border-l-0 md:border-t 
+                So on desktop it flows horizontally.
+             */
+            .process-beam {
+                top: -1px;
+                left: 0;
+                width: 100px;
+                height: 2px;
+                background: linear-gradient(to right, transparent, #f97316, transparent);
+                animation: beamSlide 3s infinite linear;
+            }
+        }
+
+        @keyframes beamDrop {
+            0% {
+                top: -100px;
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            90% {
+                opacity: 1;
+            }
+
+            100% {
+                top: 100%;
+                opacity: 0;
+            }
+        }
+
+        @keyframes beamSlide {
+            0% {
+                left: -100px;
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            90% {
+                opacity: 1;
+            }
+
+            100% {
+                left: 100%;
+                opacity: 0;
+            }
+        }
+
+        /* 5. AI Workflow Card Animations */
+        .workflow-node {
+            position: relative;
+            z-index: 10;
+            transition: all 0.3s ease;
+        }
+
+        .workflow-node::after {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            border-radius: 50%;
+            background: rgba(249, 115, 22, 0.2);
+            z-index: -1;
+            opacity: 0;
+            transform: scale(0.8);
+            transition: all 0.3s;
+        }
+
+        .card-hover:hover .workflow-node::after {
+            opacity: 1;
+            transform: scale(1.2);
+            animation: nodePulse 2s infinite;
+        }
+
+        .workflow-connector {
+            position: relative;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.1);
+            overflow: hidden;
+            flex-grow: 1;
+            margin: 0 10px;
+        }
+
+        .data-packet {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 40px;
+            background: linear-gradient(90deg, transparent, #f97316, transparent);
+            transform: translateX(-100%);
+            animation: packetFlow 2s infinite linear;
+        }
+
+        .data-packet.delay-1 {
+            animation-delay: 1s;
+        }
+
+        @keyframes packetFlow {
+            0% {
+                transform: translateX(-100%);
+            }
+
+            100% {
+                transform: translateX(200%);
+            }
+
+            /* Ensure it goes fully across */
+        }
+
+        @keyframes nodePulse {
+
+            0%,
+            100% {
+                transform: scale(1.2);
+                opacity: 0.5;
+            }
+
+            50% {
+                transform: scale(1.4);
+                opacity: 0.2;
+            }
+        }
+
+        .terminal-text::after {
+            content: '|';
+            animation: blink 1s step-end infinite;
+            color: #f97316;
+        }
+
+        /* --- 6. Custom Neural Cursor --- */
+        .cursor-dot {
+            position: fixed;
+            top: 0;
+            left: 0;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            z-index: 9999;
+            pointer-events: none;
+            width: 8px;
+            height: 8px;
+            background-color: #f97316;
+        }
+
+        /* Data Particles Canvas */
+        #neural-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* --- CYBER SECURITY LIVE HUB --- */
+        .cyber-grid-bg {
+            background-image:
+                linear-gradient(rgba(34, 197, 94, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(34, 197, 94, 0.05) 1px, transparent 1px);
+            background-size: 30px 30px;
+            mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+        }
+
+        .threat-dot {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background-color: #ef4444;
+            /* Red-500 */
+            border-radius: 50%;
+            box-shadow: 0 0 10px #ef4444;
+            animation: pulseThreat 2s infinite;
+        }
+
+        @keyframes pulseThreat {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+                box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
+            }
+
+            70% {
+                transform: scale(3);
+                opacity: 0;
+                box-shadow: 0 0 0 10px rgba(239, 68, 68, 0);
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 0;
+            }
+        }
+
+        .threat-map-container {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            background: radial-gradient(ellipse at center, rgba(16, 185, 129, 0.1) 0%, transparent 70%);
+            border: 1px solid rgba(34, 197, 94, 0.2);
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .live-log-entry {
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            color: #4ade80;
+            /* Green-400 */
+            border-left: 2px solid #22c55e;
+            padding-left: 8px;
+            margin-bottom: 4px;
+            opacity: 0;
+            animation: slideInLog 0.3s forwards;
+        }
+
+        @keyframes slideInLog {
+            from {
+                opacity: 0;
+                transform: translateX(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* --- TECH STACK MARQUEE --- */
+        .marquee-container {
+            mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+            overflow: hidden;
+        }
+
+        .marquee-content {
+            display: flex;
+            gap: 2rem;
+            animation: scroll 20s linear infinite;
+            width: max-content;
+        }
+
+        .marquee-content:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes scroll {
+            to {
+                transform: translateX(-50%);
+            }
+        }
+    </style>
+    <!-- SEO & Open Graph Tags -->
+    <meta name="description"
+        content="Brandlift: AI-Powered Digital Marketing, Web Development & Cyber Security Solutions. Automate, Optimize, Dominate.">
+    <meta property="og:title" content="Brandlift | AI-Powered Digital Solutions">
+    <meta property="og:description"
+        content="Next-Gen Digital Marketing & Cyber Security. Creative strategy fused with AI automation.">
+    <meta property="og:image" content="assets/brandlift-logo.png">
+    <meta property="og:url" content="https://brandliftonline.in">
+    <meta property="og:type" content="website">
+    <style>
+        /* ... Existing Styles ... */
+
+        /* --- NEW ADDITIONS --- */
+
+
+
+
+
+        /* Cookie Banner */
+        #cookie-banner {
+            position: fixed;
+            bottom: -100%;
+            left: 0;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.95);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            z-index: 100;
+            transition: bottom 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(10px);
+        }
+
+        #cookie-banner.show {
+            bottom: 0;
+        }
+
+        /* Custom Preloader */
+        #preloader {
+            position: fixed;
+            inset: 0;
+            background: #000;
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.5s ease-out, visibility 0.5s;
+        }
+
+        .loader {
+            --color-one: #ffbf48;
+            --color-two: #be4a1d;
+            --color-three: #ffbf4780;
+            --color-four: #bf4a1d80;
+            --color-five: #ffbf4740;
+            --time-animation: 2s;
+            --size: 1;
+            position: relative;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            transform: scale(var(--size));
+            box-shadow:
+                0 0 25px 0 var(--color-three),
+                0 20px 50px 0 var(--color-four);
+            animation: colorize calc(var(--time-animation) * 3) ease-in-out infinite;
+        }
+
+        .loader::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border-top: solid 1px var(--color-one);
+            border-bottom: solid 1px var(--color-two);
+            background: linear-gradient(180deg, var(--color-five), var(--color-four));
+            box-shadow:
+                inset 0 10px 10px 0 var(--color-three),
+                inset 0 -10px 10px 0 var(--color-four);
+            z-index: 1;
+        }
+
+        .loader .box {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(180deg,
+                    var(--color-one) 30%,
+                    var(--color-two) 70%);
+            mask: url(#clipping);
+            -webkit-mask: url(#clipping);
+        }
+
+        .loader svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100px;
+            height: 100px;
+        }
+
+        .loader svg #clipping {
+            filter: contrast(15);
+            animation: roundness calc(var(--time-animation) / 2) linear infinite;
+        }
+
+        .loader svg #clipping polygon {
+            filter: blur(7px);
+        }
+
+        .loader svg #clipping polygon:nth-child(1) {
+            transform-origin: 75% 25%;
+            transform: rotate(90deg);
+        }
+
+        .loader svg #clipping polygon:nth-child(2) {
+            transform-origin: 50% 50%;
+            animation: rotation var(--time-animation) linear infinite reverse;
+        }
+
+        .loader svg #clipping polygon:nth-child(3) {
+            transform-origin: 50% 60%;
+            animation: rotation var(--time-animation) linear infinite;
+            animation-delay: calc(var(--time-animation) / -3);
+        }
+
+        .loader svg #clipping polygon:nth-child(4) {
+            transform-origin: 40% 40%;
+            animation: rotation var(--time-animation) linear infinite reverse;
+        }
+
+        .loader svg #clipping polygon:nth-child(5) {
+            transform-origin: 40% 40%;
+            animation: rotation var(--time-animation) linear infinite reverse;
+            animation-delay: calc(var(--time-animation) / -2);
+        }
+
+        .loader svg #clipping polygon:nth-child(6) {
+            transform-origin: 60% 40%;
+            animation: rotation var(--time-animation) linear infinite;
+        }
+
+        .loader svg #clipping polygon:nth-child(7) {
+            transform-origin: 60% 40%;
+            animation: rotation var(--time-animation) linear infinite;
+            animation-delay: calc(var(--time-animation) / -1.5);
+        }
+
+        @keyframes rotation {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes roundness {
+            0% {
+                filter: contrast(15);
+            }
+
+            20% {
+                filter: contrast(3);
+            }
+
+            40% {
+                filter: contrast(3);
+            }
+
+            60% {
+                filter: contrast(15);
+            }
+
+            100% {
+                filter: contrast(15);
+            }
+        }
+
+        @keyframes colorize {
+            0% {
+                filter: hue-rotate(0deg);
+            }
+
+            20% {
+                filter: hue-rotate(-30deg);
+            }
+
+            40% {
+                filter: hue-rotate(-60deg);
+            }
+
+            60% {
+                filter: hue-rotate(-90deg);
+            }
+
+            80% {
+                filter: hue-rotate(-45deg);
+            }
+
+            100% {
+                filter: hue-rotate(0deg);
+            }
+        }
+    </style>
+</head>
+
+<body class="antialiased selection:bg-orange-500/30 selection:text-orange-200">
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader">
+            <svg width="100" height="100" viewBox="0 0 100 100">
+                <defs>
+                    <mask id="clipping">
+                        <polygon points="0,0 100,0 100,100 0,100" fill="black" />
+                        <polygon points="25,25 75,25 50,75" fill="white" />
+                        <polygon points="50,25 75,75 25,75" fill="white" />
+                        <polygon points="35,35 65,35 50,65" fill="white" />
+                        <polygon points="35,35 65,35 50,65" fill="white" />
+                        <polygon points="35,35 65,35 50,65" fill="white" />
+                        <polygon points="35,35 65,35 50,65" fill="white" />
+                    </mask>
+                </defs>
+            </svg>
+            <div class="box"></div>
+        </div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full z-50 border-b border-white/5 bg-black/50 backdrop-blur-xl">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-2">
+                <img src="assets/brandlift-logo.png" alt="Brandlift" class="h-11 w-auto object-contain mt-1">
+            </a>
+            <div class="hidden md:flex gap-8 text-xs font-medium text-zinc-400">
+                <a href="#" class="hover:text-white transition-colors">Home</a>
+                <a href="#about" class="hover:text-white transition-colors">About</a>
+                <a href="#services" class="hover:text-white transition-colors">Services</a>
+                <a href="#products" class="hover:text-white transition-colors">Products</a>
+                <a href="#tech-stack" class="hover:text-white transition-colors">Tech Stack</a>
+            </div>
+            <a href="#contact"
+                class="bg-white/10 hover:bg-white/20 text-white text-xs font-medium px-4 py-2 rounded-full border border-white/5 transition-all">
+                Contact Us
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative pt-32 pb-20 md:pt-48 md:pb-32 px-6 overflow-hidden">
+        <div data-us-project="cqcLtDwfoHqqRPttBbQE" class="absolute top-0 left-0 -z-10 w-full h-full"></div>
+
+        <div class="max-w-4xl mx-auto text-center">
+            <div
+                class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-400 text-[10px] font-medium tracking-wide uppercase mb-6 animate-fade-up">
+                <span class="w-1.5 h-1.5 rounded-full bg-orange-500 animate-pulse"></span>
+                AI-Powered Growth Engine
+            </div>
+
+            <h1
+                class="text-5xl md:text-7xl lg:text-8xl font-semibold tracking-tighter leading-[1.1] mb-6 animate-fade-up delay-100">
+                <span>Automate.</span>
+                <span class="text-zinc-500">Optimize.</span>
+                <span class="text-gradient-orange">Dominate.</span>
+            </h1>
+
+            <p
+                class="text-zinc-400 text-sm md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed animate-fade-up delay-200">
+                Next-Gen Digital Marketing & Cyber Security. <br class="hidden md:block" />
+                Creative strategy fused with AI automation to scale your brand securely.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-up delay-300">
+                <a href="#contact"
+                    class="w-full sm:w-auto px-8 py-3 bg-white text-black text-sm font-semibold rounded hover:bg-zinc-200 transition-colors text-center">
+                    Start Transformation
+                </a>
+                <a href="#services"
+                    class="w-full sm:w-auto px-8 py-3 text-zinc-400 hover:text-white text-sm font-medium transition-colors flex items-center justify-center gap-2 group">
+                    Explore Solutions <i data-lucide="arrow-right"
+                        class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Ticker -->
+    <div class="border-y border-white/5 bg-white/[0.02] py-4 overflow-hidden">
+        <div
+            class="max-w-7xl mx-auto px-6 flex justify-center items-center gap-8 md:gap-16 text-xs md:text-sm font-medium text-zinc-500 uppercase tracking-widest whitespace-nowrap">
+            <span>Digital Marketing</span>
+            <span class="text-orange-500">•</span>
+            <span>Cyber Security</span>
+            <span class="text-orange-500">•</span>
+            <span>Web Development</span>
+            <span class="text-orange-500">•</span>
+            <span>AI Automation</span>
+        </div>
+    </div>
+
+    <!-- Who We Are -->
+    <section id="about" class="py-24 px-6 relative overflow-hidden border-b border-white/5">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div>
+                <h2 class="text-3xl md:text-4xl font-semibold tracking-tight mb-6">Who We Are</h2>
+                <p class="text-zinc-400 text-lg leading-relaxed mb-8">
+                    Brandlift is a next-generation digital agency focused on AI implementation, automation, and
+                    cyber-secure digital growth.
+                </p>
+
+                <p class="text-zinc-400 leading-relaxed mb-8">
+                    We combine strategy, technology, and intelligence to help brands:
+                </p>
+
+                <ul class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10 text-left">
+                    <li
+                        class="flex items-center gap-3 p-4 bg-white/5 rounded-lg border border-white/5 hover:border-orange-500/30 transition-colors">
+                        <i data-lucide="eye" class="w-5 h-5 text-orange-500 flex-shrink-0"></i>
+                        <span class="text-zinc-200">Increase visibility</span>
+                    </li>
+                    <li
+                        class="flex items-center gap-3 p-4 bg-white/5 rounded-lg border border-white/5 hover:border-orange-500/30 transition-colors">
+                        <i data-lucide="bot" class="w-5 h-5 text-orange-500 flex-shrink-0"></i>
+                        <span class="text-zinc-200">Automate operations</span>
+                    </li>
+                    <li
+                        class="flex items-center gap-3 p-4 bg-white/5 rounded-lg border border-white/5 hover:border-orange-500/30 transition-colors">
+                        <i data-lucide="shield-check" class="w-5 h-5 text-orange-500 flex-shrink-0"></i>
+                        <span class="text-zinc-200">Secure digital assets</span>
+                    </li>
+                    <li
+                        class="flex items-center gap-3 p-4 bg-white/5 rounded-lg border border-white/5 hover:border-orange-500/30 transition-colors">
+                        <i data-lucide="trending-up" class="w-5 h-5 text-orange-500 flex-shrink-0"></i>
+                        <span class="text-zinc-200">Scale without limits</span>
+                    </li>
+                </ul>
+
+                <p class="text-zinc-400 text-lg">
+                    Our solutions are data-driven, AI-powered, and built with <span class="text-orange-500">security at
+                        the core</span>.
+                </p>
+            </div>
+
+            <div
+                class="relative w-full max-w-lg mx-auto transform hover:scale-[1.02] transition-transform duration-500 reveal-on-scroll">
+                <!-- Glow Effect -->
+                <div
+                    class="absolute inset-0 bg-gradient-to-tr from-orange-500/20 to-purple-500/20 blur-[80px] rounded-full">
+                </div>
+
+                <!-- Main Card -->
+                <div
+                    class="relative bg-zinc-900 border border-white/10 rounded-2xl p-8 shadow-2xl overflow-hidden backdrop-blur-sm flex flex-col justify-between min-h-[320px]">
+
+                    <!-- Animated Background Grid -->
+                    <div class="absolute inset-0 bg-grid opacity-20"></div>
+
+                    <!-- Workflow Graph -->
+                    <div class="flex items-center justify-between relative z-10 px-2 mt-4">
+                        <!-- Node 1: Input -->
+                        <div class="flex flex-col items-center gap-3 relative group">
+                            <div
+                                class="w-12 h-12 rounded-full bg-zinc-800 border border-white/10 flex items-center justify-center workflow-node shadow-lg shadow-black/50">
+                                <i data-lucide="database"
+                                    class="w-5 h-5 text-zinc-400 group-hover:text-white transition-colors"></i>
+                            </div>
+                            <span class="text-[10px] font-mono text-zinc-500 tracking-wider">DATA</span>
+                        </div>
+
+                        <!-- Connector 1 -->
+                        <div class="workflow-connector">
+                            <div class="data-packet"></div>
+                        </div>
+
+                        <!-- Node 2: Core AI -->
+                        <div class="flex flex-col items-center gap-3 relative group">
+                            <div
+                                class="w-16 h-16 rounded-full bg-orange-500/10 border border-orange-500/50 flex items-center justify-center workflow-node shadow-lg shadow-orange-500/20">
+                                <i data-lucide="brain-circuit" class="w-8 h-8 text-orange-500 animate-pulse"></i>
+                            </div>
+                            <span class="text-[10px] font-mono text-orange-500 tracking-wider font-bold">AI CORE</span>
+                        </div>
+
+                        <!-- Connector 2 -->
+                        <div class="workflow-connector">
+                            <div class="data-packet delay-1"></div>
+                        </div>
+
+                        <!-- Node 3: Output -->
+                        <div class="flex flex-col items-center gap-3 relative group">
+                            <div
+                                class="w-12 h-12 rounded-full bg-zinc-800 border border-white/10 flex items-center justify-center workflow-node shadow-lg shadow-black/50">
+                                <i data-lucide="rocket"
+                                    class="w-5 h-5 text-zinc-400 group-hover:text-white transition-colors"></i>
+                            </div>
+                            <span class="text-[10px] font-mono text-zinc-500 tracking-wider">GROWTH</span>
+                        </div>
+                    </div>
+
+                    <!-- Terminal Footer -->
+                    <div class="relative z-10 mt-8 bg-black/50 rounded-lg p-4 border border-white/5 font-mono text-xs">
+                        <div class="flex items-center gap-2 mb-2 border-b border-white/5 pb-2">
+                            <div class="w-2 h-2 rounded-full bg-red-500"></div>
+                            <div class="w-2 h-2 rounded-full bg-yellow-500"></div>
+                            <div class="w-2 h-2 rounded-full bg-green-500"></div>
+                            <span class="ml-auto text-zinc-600 text-[10px]">SYSTEM.LOG</span>
+                        </div>
+                        <div class="text-green-500/80 terminal-text" id="ai-terminal">Initializing system...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Services Grid (Bento Style) -->
+    <section id="services" class="py-24 px-6 relative">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-16">
+                <h2 class="text-3xl md:text-4xl font-semibold tracking-tight mb-4">Holistic Digital Ecosystems</h2>
+                <p class="text-zinc-400 max-w-2xl">We don't just build websites; we build intelligent business
+                    infrastructures.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Digital Marketing -->
+                <div
+                    class="group relative p-8 rounded-2xl bg-zinc-900/40 border border-white/5 card-hover glow-effect transition-all duration-300 reveal-on-scroll">
+                    <div
+                        class="absolute top-8 right-8 p-3 bg-orange-500/10 rounded-xl text-orange-500 flex items-end gap-1 h-10 w-10 justify-center pb-2">
+                        <div class="data-bar"></div>
+                        <div class="data-bar"></div>
+                        <div class="data-bar"></div>
+                    </div>
+                    <h3 class="text-xl font-medium tracking-tight text-white mb-2">Digital Marketing (AI-Driven)</h3>
+                    <p class="text-sm text-zinc-400 mb-8 leading-relaxed max-w-sm">📈 Real growth. Real numbers.</p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-auto">
+                        <div>
+                            <span
+                                class="text-xs font-semibold text-zinc-500 uppercase tracking-wider mb-3 block">Acquisition</span>
+                            <ul class="space-y-2">
+                                <li class="flex items-start gap-2 text-sm text-zinc-300">
+                                    <i data-lucide="megaphone" class="w-3 h-3 text-orange-500 mt-1 shrink-0"></i>
+                                    <span>Performance Ads <span class="text-zinc-500 text-xs block">(Meta, Google,
+                                            LinkedIn)</span></span>
+                                </li>
+                                <li class="flex items-center gap-2 text-sm text-zinc-300">
+                                    <i data-lucide="search" class="w-3 h-3 text-orange-500 shrink-0"></i> SEO & Organic
+                                    Growth
+                                </li>
+                                <li class="flex items-center gap-2 text-sm text-zinc-300">
+                                    <i data-lucide="palette" class="w-3 h-3 text-orange-500 shrink-0"></i> Brand
+                                    Strategy & Ads
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <span
+                                class="text-xs font-semibold text-zinc-500 uppercase tracking-wider mb-3 block">Optimization</span>
+                            <ul class="space-y-2">
+                                <li class="flex items-center gap-2 text-sm text-zinc-300">
+                                    <i data-lucide="git-merge" class="w-3 h-3 text-orange-500 shrink-0"></i> Lead
+                                    Funnels & Auto
+                                </li>
+                                <li class="flex items-center gap-2 text-sm text-zinc-300">
+                                    <i data-lucide="bar-chart-2" class="w-3 h-3 text-orange-500 shrink-0"></i> Analytics
+                                    & CRO
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Web Development -->
+                <div
+                    class="group relative p-8 rounded-2xl bg-zinc-900/40 border border-white/5 card-hover glow-effect transition-all duration-300 reveal-on-scroll">
+                    <div
+                        class="absolute top-8 right-8 p-3 bg-zinc-800 rounded-xl text-zinc-300 group-hover:text-orange-500 transition-colors">
+                        <span class="font-mono text-lg font-bold typing-cursor">&lt;/&gt;</span>
+                    </div>
+                    <h3 class="text-xl font-medium tracking-tight text-white mb-2">Web Development</h3>
+                    <p class="text-sm text-zinc-400 mb-8 leading-relaxed max-w-sm">High-performance, scalable, and
+                        secure websites designed for growth and conversion.</p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-auto">
+                        <div>
+                            <span
+                                class="text-xs font-semibold text-zinc-500 uppercase tracking-wider mb-3 block">Capabilities</span>
+                            <ul class="space-y-2">
+                                <li class="flex items-center gap-2 text-sm text-zinc-300">
+                                    <i data-lucide="chevron-right" class="w-3 h-3 text-orange-500"></i> Corporate Sites
+                                </li>
+                                <li class="flex items-center gap-2 text-sm text-zinc-300">
+                                    <i data-lucide="chevron-right" class="w-3 h-3 text-orange-500"></i> Web Applications
+                                </li>
+                                <li class="flex items-center gap-2 text-sm text-zinc-300">
+                                    <i data-lucide="chevron-right" class="w-3 h-3 text-orange-500"></i> Landing Pages
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <span class="text-xs font-semibold text-zinc-500 uppercase tracking-wider mb-3 block">Smart
+                                Features</span>
+                            <ul class="space-y-2">
+                                <li class="flex items-center gap-2 text-sm text-zinc-300">
+                                    <i data-lucide="zap" class="w-3 h-3 text-orange-500"></i> Fast Loading
+                                </li>
+                                <li class="flex items-center gap-2 text-sm text-zinc-300">
+                                    <i data-lucide="zap" class="w-3 h-3 text-orange-500"></i> AI Chatbots
+                                </li>
+                                <li class="flex items-center gap-2 text-sm text-zinc-300">
+                                    <i data-lucide="shield" class="w-3 h-3 text-orange-500"></i> Security-First
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI Automation -->
+                <div
+                    class="group relative p-8 rounded-2xl bg-zinc-900/40 border border-white/5 card-hover glow-effect transition-all duration-300 reveal-on-scroll">
+                    <div
+                        class="absolute top-8 right-8 p-3 bg-zinc-800 rounded-xl text-zinc-300 group-hover:text-orange-500 transition-colors">
+                        <i data-lucide="bot" class="w-6 h-6 bot-icon"></i>
+                    </div>
+                    <h3 class="text-xl font-medium tracking-tight text-white mb-2"><span class="decrypt-text"
+                            data-value="AI Automation Services">AI Automation Services</span></h3>
+                    <p class="text-sm text-zinc-400 mb-8 leading-relaxed max-w-sm">"Automate today, dominate tomorrow."
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-auto">
+                        <div>
+                            <span class="text-xs font-semibold text-zinc-500 uppercase tracking-wider mb-3 block">Core
+                                Automation</span>
+                            <ul class="space-y-2">
+                                <li class="flex items-start gap-2 text-sm text-zinc-300">
+                                    <i data-lucide="message-square" class="w-3 h-3 text-orange-500 mt-1 shrink-0"></i>
+                                    <span>AI Chatbots <span class="text-zinc-500 text-xs block">(Web, TripAdvisor,
+                                            Insta, CRM)</span></span>
+                                </li>
+                                <li class="flex items-start gap-2 text-sm text-zinc-300">
+                                    <i data-lucide="workflow" class="w-3 h-3 text-orange-500 mt-1 shrink-0"></i>
+                                    <span>Workflow Auto <span class="text-zinc-500 text-xs block">(Sales, Leads,
+                                            Support, HR)</span></span>
+                                </li>
+                                <li class="flex items-center gap-2 text-sm text-zinc-300">
+                                    <i data-lucide="bot" class="w-3 h-3 text-orange-500 shrink-0"></i> Custom AI Agents
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <span
+                                class="text-xs font-semibold text-zinc-500 uppercase tracking-wider mb-3 block">Intelligence</span>
+                            <ul class="space-y-2">
+                                <li class="flex items-center gap-2 text-sm text-zinc-300">
+                                    <i data-lucide="line-chart" class="w-3 h-3 text-orange-500 shrink-0"></i> Predictive
+                                    Analytics
+                                </li>
+                                <li class="flex items-center gap-2 text-sm text-zinc-300">
+                                    <i data-lucide="file-text" class="w-3 h-3 text-orange-500 shrink-0"></i> AI Reports
+                                </li>
+                                <li class="flex items-center gap-2 text-sm text-zinc-300">
+                                    <i data-lucide="headset" class="w-3 h-3 text-orange-500 shrink-0"></i> GPT Support
+                                    Systems
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cyber Security -->
+                <div id="security"
+                    class="group relative p-8 rounded-2xl bg-zinc-900/40 border border-white/5 card-hover glow-effect transition-all duration-300 reveal-on-scroll">
+                    <div
+                        class="absolute top-8 right-8 p-3 bg-zinc-800 rounded-xl text-zinc-300 group-hover:text-orange-500 transition-colors">
+                        <i data-lucide="lock" class="w-6 h-6 security-icon"></i>
+                    </div>
+                    <h3 class="text-xl font-medium tracking-tight text-white mb-2"><span
+                            class="glitch-text decrypt-text" data-text="Cyber Security Services"
+                            data-value="Cyber Security Services">Cyber Security Services</span></h3>
+                    <p class="text-sm text-zinc-400 mb-8 leading-relaxed max-w-sm">🔒 Build fast. Stay secure.</p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-auto">
+                        <div>
+                            <span
+                                class="text-xs font-semibold text-zinc-500 uppercase tracking-wider mb-3 block">Assessment</span>
+                            <ul class="space-y-2">
+                                <li class="flex items-start gap-2 text-sm text-zinc-300">
+                                    <i data-lucide="file-search" class="w-3 h-3 text-orange-500 mt-1 shrink-0"></i>
+                                    <span>Web/App Security Audit</span>
+                                </li>
+                                <li class="flex items-start gap-2 text-sm text-zinc-300">
+                                    <i data-lucide="shield-alert" class="w-3 h-3 text-orange-500 mt-1 shrink-0"></i>
+                                    <span>Penetration Testing <span class="text-zinc-500 text-xs block">(Web, Mobile,
+                                            API)</span></span>
+                                </li>
+                                <li class="flex items-start gap-2 text-sm text-zinc-300">
+                                    <i data-lucide="bug" class="w-3 h-3 text-orange-500 mt-1 shrink-0"></i>
+                                    <span>Vuln. Assessment & Fig</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <span
+                                class="text-xs font-semibold text-zinc-500 uppercase tracking-wider mb-3 block">Protection</span>
+                            <ul class="space-y-2">
+                                <li class="flex items-center gap-2 text-sm text-zinc-300">
+                                    <i data-lucide="cloud" class="w-3 h-3 text-orange-500 shrink-0"></i> Server & Cloud
+                                    Security
+                                </li>
+                                <li class="flex items-center gap-2 text-sm text-zinc-300">
+                                    <i data-lucide="skull" class="w-3 h-3 text-orange-500 shrink-0"></i> Malware Removal
+                                </li>
+                                <li class="flex items-center gap-2 text-sm text-zinc-300">
+                                    <i data-lucide="shield-check" class="w-3 h-3 text-orange-500 shrink-0"></i> Security
+                                    Consulting
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Custom Solutions CTA -->
+            <div
+                class="mt-6 p-8 rounded-2xl bg-gradient-to-r from-orange-500/10 to-transparent border border-orange-500/20 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+                <div>
+                    <h3 class="text-lg font-medium text-white mb-1">Explore Custom Solutions</h3>
+                    <p class="text-sm text-zinc-400">Need something specific? We build tailored AI and digital
+                        solutions.</p>
+                </div>
+                <a href="#contact"
+                    class="px-6 py-2 bg-orange-500 hover:bg-orange-600 text-black text-sm font-semibold rounded transition-colors whitespace-nowrap">
+                    Get a Quote
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Features Breakdown -->
+    <section class="py-24 bg-zinc-900/20 border-y border-white/5 relative overflow-hidden">
+        <canvas id="neural-canvas"></canvas>
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-16 max-w-2xl mx-auto">
+                <span class="text-orange-500 font-mono text-xs mb-2 block">POWERED BY INTELLIGENCE</span>
+                <h2 class="text-3xl md:text-4xl font-semibold tracking-tight mb-4 text-gradient-orange">How We Use AI to
+                    Power Your Business
+                </h2>
+                <p class="text-zinc-400">Smarter decisions. Faster execution. Better results. We integrate AI across
+                    every service.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div
+                    class="p-6 bg-zinc-900/20 border border-white/5 rounded-xl card-hover glow-effect reveal-on-scroll">
+                    <div
+                        class="w-10 h-10 bg-zinc-800 rounded-lg flex items-center justify-center mb-4 text-white feature-icon-box">
+                        <i data-lucide="bar-chart-3" class="feature-icon"></i>
+                    </div>
+                    <h3 class="text-base font-medium text-white mb-2">AI Marketing Optimization</h3>
+                    <p class="text-sm text-zinc-400 leading-relaxed">Algorithms that adjust ad spend and targeting in
+                        real-time for peak ROI.</p>
+                </div>
+                <!-- Feature 2 -->
+                <div
+                    class="p-6 bg-zinc-900/20 border border-white/5 rounded-xl card-hover glow-effect reveal-on-scroll">
+                    <div
+                        class="w-10 h-10 bg-zinc-800 rounded-lg flex items-center justify-center mb-4 text-white feature-icon-box">
+                        <i data-lucide="message-square" class="feature-icon"></i>
+                    </div>
+                    <h3 class="text-base font-medium text-white mb-2">Smart Chatbots</h3>
+                    <p class="text-sm text-zinc-400 leading-relaxed">24/7 customer engagement powered by natural
+                        language processing.</p>
+                </div>
+                <!-- Feature 3 -->
+                <div
+                    class="p-6 bg-zinc-900/20 border border-white/5 rounded-xl card-hover glow-effect reveal-on-scroll">
+                    <div
+                        class="w-10 h-10 bg-zinc-800 rounded-lg flex items-center justify-center mb-4 text-white feature-icon-box">
+                        <i data-lucide="git-merge" class="feature-icon"></i>
+                    </div>
+                    <h3 class="text-base font-medium text-white mb-2">Automated Lead Nurturing</h3>
+                    <p class="text-sm text-zinc-400 leading-relaxed">Intelligent workflows that guide prospects through
+                        the sales funnel.</p>
+                </div>
+                <!-- Feature 4 -->
+                <div
+                    class="p-6 bg-zinc-900/20 border border-white/5 rounded-xl card-hover glow-effect reveal-on-scroll">
+                    <div
+                        class="w-10 h-10 bg-zinc-800 rounded-lg flex items-center justify-center mb-4 text-white feature-icon-box">
+                        <i data-lucide="line-chart" class="feature-icon"></i>
+                    </div>
+                    <h3 class="text-base font-medium text-white mb-2">Predictive Analytics</h3>
+                    <p class="text-sm text-zinc-400 leading-relaxed">Forecast market trends and customer behavior with
+                        high accuracy.</p>
+                </div>
+                <!-- Feature 5 -->
+                <div class="p-6 bg-zinc-900/20 border border-white/5 rounded-xl card-hover glow-effect">
+                    <div
+                        class="w-10 h-10 bg-zinc-800 rounded-lg flex items-center justify-center mb-4 text-white feature-icon-box">
+                        <i data-lucide="shield-check" class="feature-icon"></i>
+                    </div>
+                    <h3 class="text-base font-medium text-white mb-2">AI-Powered Threat Detection</h3>
+                    <p class="text-sm text-zinc-400 leading-relaxed">Proactive security systems that neutralize threats
+                        before they strike.</p>
+                </div>
+                <!-- Feature 6 -->
+                <div class="p-6 bg-zinc-900/20 border border-white/5 rounded-xl card-hover glow-effect">
+                    <div
+                        class="w-10 h-10 bg-zinc-800 rounded-lg flex items-center justify-center mb-4 text-white feature-icon-box">
+                        <i data-lucide="cpu" class="feature-icon icon-spin"></i>
+                    </div>
+                    <h3 class="text-base font-medium text-white mb-2">Operational Automation</h3>
+                    <p class="text-sm text-zinc-400 leading-relaxed">Streamline complex business processes to reduce
+                        manual effort.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Global Security Intelligence -->
+    <section class="py-24 px-6 border-b border-white/5 relative overflow-hidden">
+        <div class="absolute inset-0 bg-green-900/5 -z-10"></div>
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col lg:flex-row gap-12">
+                <!-- Live Map -->
+                <div class="lg:w-2/3 reveal-on-scroll">
+                    <span class="text-green-500 font-mono text-xs mb-2 block animate-pulse">● LIVE SECURITY FEED</span>
+                    <h2 class="text-3xl font-semibold tracking-tight text-white mb-6">Global Threat Intelligence</h2>
+                    <p class="text-zinc-400 mb-8 max-w-lg">
+                        Our AI-driven sentinels monitor and neutralize cyber threats in real-time across decentralized
+                        nodes.
+                    </p>
+
+                    <div class="threat-map-container cyber-grid-bg flex items-center justify-center relative">
+                        <!-- Simulated Map Dots -->
+                        <div class="threat-dot" style="top: 30%; left: 20%; animation-delay: 0s;"></div>
+                        <div class="threat-dot" style="top: 45%; left: 70%; animation-delay: 1.2s;"></div>
+                        <div class="threat-dot" style="top: 60%; left: 40%; animation-delay: 0.5s;"></div>
+                        <div class="threat-dot" style="top: 25%; left: 80%; animation-delay: 2s;"></div>
+                        <div class="threat-dot" style="top: 70%; left: 15%; animation-delay: 1.5s;"></div>
+                        <div class="threat-dot" style="top: 50%; left: 50%; animation-delay: 0.8s;"></div>
+
+                        <div
+                            class="absolute bottom-4 left-4 right-4 bg-black/80 border border-green-500/30 rounded p-2 overflow-hidden h-24">
+                            <div class="live-log-entry">[INFO] Port 443 Scanning blocked from IP 192.168.x.x</div>
+                            <div class="live-log-entry" style="animation-delay: 0.5s;">[WARN] SQL Injection Attempt
+                                neutralized</div>
+                            <div class="live-log-entry" style="animation-delay: 1.0s;">[SEC] Handshake verified: TK-429
+                                Protocol</div>
+                            <div class="live-log-entry" style="animation-delay: 1.5s;">[INFO] Node Tokyo operational
+                            </div>
+                            <div class="live-log-entry" style="animation-delay: 2.0s;">[SEC] DDOS mitigation active:
+                                sector 7</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stats -->
+                <div class="lg:w-1/3 flex flex-col justify-center gap-6 reveal-on-scroll delay-200">
+                    <div class="p-6 bg-zinc-900/40 border border-green-500/20 rounded-xl glow-effect">
+                        <span class="text-xs text-zinc-500 uppercase tracking-widest">Threats Blocked</span>
+                        <div class="text-4xl font-mono text-white mt-1">1,240,094</div>
+                        <div class="text-[10px] text-green-500 mt-1">▲ +124 last hour</div>
+                    </div>
+                    <div class="p-6 bg-zinc-900/40 border border-green-500/20 rounded-xl glow-effect">
+                        <span class="text-xs text-zinc-500 uppercase tracking-widest">Global Uptime</span>
+                        <div class="text-4xl font-mono text-white mt-1">99.99%</div>
+                        <div class="w-full h-1 bg-zinc-800 mt-3 rounded-full overflow-hidden">
+                            <div class="h-full bg-green-500 w-[99%]"></div>
+                        </div>
+                    </div>
+                    <div class="p-6 bg-zinc-900/40 border border-green-500/20 rounded-xl glow-effect">
+                        <span class="text-xs text-zinc-500 uppercase tracking-widest">Compliance</span>
+                        <div class="flex gap-3 mt-3 opacity-70">
+                            <div class="text-[10px] px-2 py-1 border border-white/20 rounded text-zinc-300">ISO 27001
+                            </div>
+                            <div class="text-[10px] px-2 py-1 border border-white/20 rounded text-zinc-300">GDPR</div>
+                            <div class="text-[10px] px-2 py-1 border border-white/20 rounded text-zinc-300">SOC2</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How We Work Process -->
+    <section id="process" class="py-24 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                <div>
+                    <h2 class="text-3xl font-semibold tracking-tight mb-2">How We Work</h2>
+                    <p class="text-zinc-400 text-sm">Our proven process for delivering digital excellence.</p>
+                </div>
+                <a href="#contact"
+                    class="text-orange-500 text-sm font-medium hover:text-orange-400 flex items-center gap-2">
+                    Start a Project <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+            </div>
+
+            <div
+                class="relative border-l border-white/10 ml-3 md:ml-0 md:border-l-0 md:border-t md:mt-12 grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-4 process-line-container">
+                <div class="process-beam"></div>
+
+                <!-- Step 1 -->
+                <div class="pl-8 md:pl-0 md:pt-8 relative group reveal-on-scroll">
+                    <div
+                        class="absolute left-[-5px] top-0 md:top-[-5px] md:left-0 w-2.5 h-2.5 bg-zinc-800 border border-zinc-600 rounded-full group-hover:bg-orange-500 group-hover:border-orange-500 transition-colors">
+                    </div>
+                    <span class="text-orange-500 font-mono text-xs mb-2 block">01</span>
+                    <h3 class="text-sm font-semibold text-white mb-2">Discovery &amp; Strategy</h3>
+                    <p class="text-xs text-zinc-400 leading-relaxed">Understand your business goals &amp; challenges.
+                    </p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="pl-8 md:pl-0 md:pt-8 relative group reveal-on-scroll">
+                    <div
+                        class="absolute left-[-5px] top-0 md:top-[-5px] md:left-0 w-2.5 h-2.5 bg-zinc-800 border border-zinc-600 rounded-full group-hover:bg-orange-500 group-hover:border-orange-500 transition-colors">
+                    </div>
+                    <span class="text-orange-500 font-mono text-xs mb-2 block">02</span>
+                    <h3 class="text-sm font-semibold text-white mb-2">AI Planning</h3>
+                    <p class="text-xs text-zinc-400 leading-relaxed">Identify automation &amp; intelligence
+                        opportunities.</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="pl-8 md:pl-0 md:pt-8 relative group reveal-on-scroll">
+                    <div
+                        class="absolute left-[-5px] top-0 md:top-[-5px] md:left-0 w-2.5 h-2.5 bg-zinc-800 border border-zinc-600 rounded-full group-hover:bg-orange-500 group-hover:border-orange-500 transition-colors">
+                    </div>
+                    <span class="text-orange-500 font-mono text-xs mb-2 block">03</span>
+                    <h3 class="text-sm font-semibold text-white mb-2">Design &amp; Dev</h3>
+                    <p class="text-xs text-zinc-400 leading-relaxed">Build fast, scalable, and secure solutions.</p>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="pl-8 md:pl-0 md:pt-8 relative group">
+                    <div
+                        class="absolute left-[-5px] top-0 md:top-[-5px] md:left-0 w-2.5 h-2.5 bg-zinc-800 border border-zinc-600 rounded-full group-hover:bg-orange-500 group-hover:border-orange-500 transition-colors">
+                    </div>
+                    <span class="text-orange-500 font-mono text-xs mb-2 block">04</span>
+                    <h3 class="text-sm font-semibold text-white mb-2">Security Impl.</h3>
+                    <p class="text-xs text-zinc-400 leading-relaxed">Protect systems from day one.</p>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="pl-8 md:pl-0 md:pt-8 relative group">
+                    <div
+                        class="absolute left-[-5px] top-0 md:top-[-5px] md:left-0 w-2.5 h-2.5 bg-zinc-800 border border-zinc-600 rounded-full group-hover:bg-orange-500 group-hover:border-orange-500 transition-colors">
+                    </div>
+                    <span class="text-orange-500 font-mono text-xs mb-2 block">05</span>
+                    <h3 class="text-sm font-semibold text-white mb-2">Launch &amp; Scale</h3>
+                    <p class="text-xs text-zinc-400 leading-relaxed">AI-driven monitoring, support &amp; improvements.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack Arsenal -->
+    <section id="tech-stack" class="py-24 border-b border-white/5 bg-black">
+        <div class="max-w-7xl mx-auto px-6 mb-12 text-center">
+            <span class="text-zinc-500 font-mono text-xs tracking-widest uppercase">Powered By Modern Logic</span>
+            <h2 class="text-3xl font-semibold text-white mt-4">Our Tech Arsenal</h2>
+        </div>
+
+        <div class="marquee-container relative">
+            <div class="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-black to-transparent z-10"></div>
+            <div class="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-black to-transparent z-10"></div>
+
+            <div class="marquee-content py-4">
+                <!-- Set 1 -->
+                <div class="flex items-center gap-2 px-6 py-3 border border-white/10 rounded-full bg-zinc-900/50">
+                    <i data-lucide="code-2" class="w-4 h-4 text-blue-400"></i> <span
+                        class="text-zinc-300 text-sm font-mono">React.js</span>
+                </div>
+                <div class="flex items-center gap-2 px-6 py-3 border border-white/10 rounded-full bg-zinc-900/50">
+                    <i data-lucide="cpu" class="w-4 h-4 text-yellow-400"></i> <span
+                        class="text-zinc-300 text-sm font-mono">Python</span>
+                </div>
+                <div class="flex items-center gap-2 px-6 py-3 border border-white/10 rounded-full bg-zinc-900/50">
+                    <i data-lucide="box" class="w-4 h-4 text-green-400"></i> <span
+                        class="text-zinc-300 text-sm font-mono">Node.js</span>
+                </div>
+                <div class="flex items-center gap-2 px-6 py-3 border border-white/10 rounded-full bg-zinc-900/50">
+                    <i data-lucide="database" class="w-4 h-4 text-cyan-400"></i> <span
+                        class="text-zinc-300 text-sm font-mono">PostgreSQL</span>
+                </div>
+                <div class="flex items-center gap-2 px-6 py-3 border border-white/10 rounded-full bg-zinc-900/50">
+                    <i data-lucide="cloud" class="w-4 h-4 text-orange-400"></i> <span
+                        class="text-zinc-300 text-sm font-mono">AWS</span>
+                </div>
+                <div class="flex items-center gap-2 px-6 py-3 border border-white/10 rounded-full bg-zinc-900/50">
+                    <i data-lucide="brain-circuit" class="w-4 h-4 text-purple-400"></i> <span
+                        class="text-zinc-300 text-sm font-mono">TensorFlow</span>
+                </div>
+                <div class="flex items-center gap-2 px-6 py-3 border border-white/10 rounded-full bg-zinc-900/50">
+                    <i data-lucide="container" class="w-4 h-4 text-blue-500"></i> <span
+                        class="text-zinc-300 text-sm font-mono">Docker</span>
+                </div>
+                <div class="flex items-center gap-2 px-6 py-3 border border-white/10 rounded-full bg-zinc-900/50">
+                    <i data-lucide="layers" class="w-4 h-4 text-emerald-400"></i> <span
+                        class="text-zinc-300 text-sm font-mono">Tailwind</span>
+                </div>
+
+                <!-- Duplicate Set for Infinity Loop -->
+                <div class="flex items-center gap-2 px-6 py-3 border border-white/10 rounded-full bg-zinc-900/50">
+                    <i data-lucide="code-2" class="w-4 h-4 text-blue-400"></i> <span
+                        class="text-zinc-300 text-sm font-mono">React.js</span>
+                </div>
+                <div class="flex items-center gap-2 px-6 py-3 border border-white/10 rounded-full bg-zinc-900/50">
+                    <i data-lucide="cpu" class="w-4 h-4 text-yellow-400"></i> <span
+                        class="text-zinc-300 text-sm font-mono">Python</span>
+                </div>
+                <div class="flex items-center gap-2 px-6 py-3 border border-white/10 rounded-full bg-zinc-900/50">
+                    <i data-lucide="box" class="w-4 h-4 text-green-400"></i> <span
+                        class="text-zinc-300 text-sm font-mono">Node.js</span>
+                </div>
+                <div class="flex items-center gap-2 px-6 py-3 border border-white/10 rounded-full bg-zinc-900/50">
+                    <i data-lucide="database" class="w-4 h-4 text-cyan-400"></i> <span
+                        class="text-zinc-300 text-sm font-mono">PostgreSQL</span>
+                </div>
+                <div class="flex items-center gap-2 px-6 py-3 border border-white/10 rounded-full bg-zinc-900/50">
+                    <i data-lucide="cloud" class="w-4 h-4 text-orange-400"></i> <span
+                        class="text-zinc-300 text-sm font-mono">AWS</span>
+                </div>
+                <div class="flex items-center gap-2 px-6 py-3 border border-white/10 rounded-full bg-zinc-900/50">
+                    <i data-lucide="brain-circuit" class="w-4 h-4 text-purple-400"></i> <span
+                        class="text-zinc-300 text-sm font-mono">TensorFlow</span>
+                </div>
+                <div class="flex items-center gap-2 px-6 py-3 border border-white/10 rounded-full bg-zinc-900/50">
+                    <i data-lucide="container" class="w-4 h-4 text-blue-500"></i> <span
+                        class="text-zinc-300 text-sm font-mono">Docker</span>
+                </div>
+                <div class="flex items-center gap-2 px-6 py-3 border border-white/10 rounded-full bg-zinc-900/50">
+                    <i data-lucide="layers" class="w-4 h-4 text-emerald-400"></i> <span
+                        class="text-zinc-300 text-sm font-mono">Tailwind</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Why Choose Us -->
+        <section class="py-24 bg-gradient-to-b from-zinc-900/0 to-zinc-900/30">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                    <div>
+                        <h2 class="text-4xl md:text-5xl font-semibold tracking-tighter mb-6">Why Choose <br><span
+                                class="text-orange-500">Brandlift?</span></h2>
+                        <p class="text-zinc-400 text-lg leading-relaxed mb-8">
+                            We aren't just a service provider; we are your growth partner. By integrating AI,
+                            Automation,
+                            and Security into one cohesive strategy, we deliver results that scale.
+                        </p>
+                        <div
+                            class="flex items-center gap-3 text-white text-sm font-medium bg-white/5 inline-flex px-4 py-2 rounded-lg border border-white/5">
+                            <span class="text-orange-500">👉</span> One partner for marketing, technology, automation
+                            &amp;
+                            security.
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div
+                            class="p-6 bg-zinc-900 rounded-xl border border-white/5 hover:border-orange-500/30 glow-effect transition-colors reveal-on-scroll">
+                            <i data-lucide="cpu" class="w-5 h-5 text-orange-500 mb-3"></i>
+                            <h3 class="text-white font-medium mb-1">AI-Powered Approach</h3>
+                            <p class="text-xs text-zinc-500">Data-driven decisions.</p>
+                        </div>
+                        <div
+                            class="p-6 bg-zinc-900 rounded-xl border border-white/5 hover:border-orange-500/30 glow-effect transition-colors reveal-on-scroll">
+                            <i data-lucide="layers" class="w-5 h-5 text-orange-500 mb-3"></i>
+                            <h3 class="text-white font-medium mb-1">End-to-End Solutions</h3>
+                            <p class="text-xs text-zinc-500">From concept to code.</p>
+                        </div>
+                        <div
+                            class="p-6 bg-zinc-900 rounded-xl border border-white/5 hover:border-orange-500/30 glow-effect transition-colors reveal-on-scroll">
+                            <i data-lucide="shield-check" class="w-5 h-5 text-orange-500 mb-3"></i>
+                            <h3 class="text-white font-medium mb-1">Security First</h3>
+                            <p class="text-xs text-zinc-500">Built-in protection.</p>
+                        </div>
+                        <div
+                            class="p-6 bg-zinc-900 rounded-xl border border-white/5 hover:border-orange-500/30 glow-effect transition-colors reveal-on-scroll">
+                            <i data-lucide="rocket" class="w-5 h-5 text-orange-500 mb-3"></i>
+                            <h3 class="text-white font-medium mb-1">Results Driven</h3>
+                            <p class="text-xs text-zinc-500">Focus on ROI.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="py-24 px-6 border-b border-white/5 bg-zinc-900/20">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-3xl md:text-4xl font-semibold text-center mb-16 text-white">Trusted by <span
+                        class="text-orange-500">Innovators</span></h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Review 1 -->
+                    <div class="p-8 rounded-2xl bg-zinc-900/40 border border-white/5 glow-effect">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div
+                                class="w-12 h-12 rounded-full bg-zinc-800 flex items-center justify-center text-orange-500 font-bold">
+                                JD</div>
+                            <div>
+                                <h4 class="text-white font-medium">John Doe</h4>
+                                <p class="text-xs text-zinc-500">CTO, TechCorp</p>
+                            </div>
+                        </div>
+                        <p class="text-zinc-400 text-sm leading-relaxed">
+                            "Brandlift transformed our digital infrastructure. Their AI automation cut our operational
+                            costs by 40%."
+                        </p>
+                        <div class="flex gap-1 mt-4 text-orange-500 text-xs">★★★★★</div>
+                    </div>
+                    <!-- Review 2 -->
+                    <div class="p-8 rounded-2xl bg-zinc-900/40 border border-white/5 glow-effect">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div
+                                class="w-12 h-12 rounded-full bg-zinc-800 flex items-center justify-center text-orange-500 font-bold">
+                                AS</div>
+                            <div>
+                                <h4 class="text-white font-medium">Sarah Lee</h4>
+                                <p class="text-xs text-zinc-500">Founder, StartupX</p>
+                            </div>
+                        </div>
+                        <p class="text-zinc-400 text-sm leading-relaxed">
+                            "The security audit was an eye-opener. We are now ISO 27001 compliant thanks to their
+                            guidance."
+                        </p>
+                        <div class="flex gap-1 mt-4 text-orange-500 text-xs">★★★★★</div>
+                    </div>
+                    <!-- Review 3 -->
+                    <div class="p-8 rounded-2xl bg-zinc-900/40 border border-white/5 glow-effect">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div
+                                class="w-12 h-12 rounded-full bg-zinc-800 flex items-center justify-center text-orange-500 font-bold">
+                                MR</div>
+                            <div>
+                                <h4 class="text-white font-medium">Michael Ross</h4>
+                                <p class="text-xs text-zinc-500">CEO, FinServe</p>
+                            </div>
+                        </div>
+                        <p class="text-zinc-400 text-sm leading-relaxed">
+                            "A truly holistic approach. From SEO to AI chatbots, everything works seamlessly together."
+                        </p>
+                        <div class="flex gap-1 mt-4 text-orange-500 text-xs">★★★★★</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+        <!-- Products / Featured Work -->
+        <section id="products" class="py-24 px-6 relative border-t border-white/5 bg-zinc-900/10">
+            <div class="max-w-7xl mx-auto">
+                <div class="mb-16 text-center max-w-2xl mx-auto reveal-on-scroll">
+                    <span class="text-orange-500 font-mono text-xs mb-2 block">PORTFOLIO</span>
+                    <h2 class="text-3xl md:text-4xl font-semibold tracking-tight mb-4 text-white">Featured <span
+                            class="text-orange-500">Innovation</span></h2>
+                    <p class="text-zinc-400">
+                        A showcase of our high-impact projects, ranging from AI automation systems to immersive web
+                        experiences.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project 1 -->
+                    <div
+                        class="group relative rounded-2xl overflow-hidden border border-white/5 bg-zinc-900/40 reveal-on-scroll">
+                        <div class="h-48 bg-zinc-800/50 flex items-center justify-center relative overflow-hidden">
+                            <!-- Placeholder Art -->
+                            <div class="absolute inset-0 bg-gradient-to-br from-orange-500/20 to-purple-900/20"></div>
+                            <i data-lucide="bot"
+                                class="w-12 h-12 text-orange-500/50 group-hover:scale-110 transition-transform duration-500"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3
+                                class="text-xl font-medium text-white mb-2 group-hover:text-orange-500 transition-colors">
+                                NeuroBot CRM</h3>
+                            <p class="text-sm text-zinc-400 mb-4 line-clamp-2">
+                                An autonomous customer relationship manager that predicts sales trends and automates
+                                follow-ups.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="text-[10px] px-2 py-1 bg-white/5 rounded text-zinc-400">Python</span>
+                                <span class="text-[10px] px-2 py-1 bg-white/5 rounded text-zinc-400">TensorFlow</span>
+                                <span class="text-[10px] px-2 py-1 bg-white/5 rounded text-zinc-400">React</span>
+                            </div>
+                            <a href="#"
+                                class="inline-flex items-center text-xs font-semibold text-white hover:text-orange-500 transition-colors">
+                                View Case Study <i data-lucide="arrow-right" class="w-3 h-3 ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div
+                        class="group relative rounded-2xl overflow-hidden border border-white/5 bg-zinc-900/40 reveal-on-scroll delay-100">
+                        <div class="h-48 bg-zinc-800/50 flex items-center justify-center relative overflow-hidden">
+                            <div class="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-cyan-900/20"></div>
+                            <i data-lucide="shield-check"
+                                class="w-12 h-12 text-blue-500/50 group-hover:scale-110 transition-transform duration-500"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-medium text-white mb-2 group-hover:text-blue-500 transition-colors">
+                                SecureGuard API</h3>
+                            <p class="text-sm text-zinc-400 mb-4 line-clamp-2">
+                                Enterprise-grade security middleware detecting SQL injection and DDoS attacks in
+                                real-time.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="text-[10px] px-2 py-1 bg-white/5 rounded text-zinc-400">Node.js</span>
+                                <span class="text-[10px] px-2 py-1 bg-white/5 rounded text-zinc-400">Redis</span>
+                                <span class="text-[10px] px-2 py-1 bg-white/5 rounded text-zinc-400">Docker</span>
+                            </div>
+                            <a href="#"
+                                class="inline-flex items-center text-xs font-semibold text-white hover:text-blue-500 transition-colors">
+                                View Case Study <i data-lucide="arrow-right" class="w-3 h-3 ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div
+                        class="group relative rounded-2xl overflow-hidden border border-white/5 bg-zinc-900/40 reveal-on-scroll delay-200">
+                        <div class="h-48 bg-zinc-800/50 flex items-center justify-center relative overflow-hidden">
+                            <div class="absolute inset-0 bg-gradient-to-br from-green-500/20 to-emerald-900/20"></div>
+                            <i data-lucide="layout"
+                                class="w-12 h-12 text-green-500/50 group-hover:scale-110 transition-transform duration-500"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3
+                                class="text-xl font-medium text-white mb-2 group-hover:text-green-500 transition-colors">
+                                FinTech Dashboard</h3>
+                            <p class="text-sm text-zinc-400 mb-4 line-clamp-2">
+                                A high-frequency trading interface with sub-millisecond data visualization and
+                                execution.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="text-[10px] px-2 py-1 bg-white/5 rounded text-zinc-400">Next.js</span>
+                                <span class="text-[10px] px-2 py-1 bg-white/5 rounded text-zinc-400">WebSockets</span>
+                                <span class="text-[10px] px-2 py-1 bg-white/5 rounded text-zinc-400">D3.js</span>
+                            </div>
+                            <a href="#"
+                                class="inline-flex items-center text-xs font-semibold text-white hover:text-green-500 transition-colors">
+                                View Case Study <i data-lucide="arrow-right" class="w-3 h-3 ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-12 text-center">
+                    <button
+                        class="px-6 py-3 border border-white/10 hover:border-orange-500/50 rounded-full text-xs font-medium text-white transition-all hover:bg-orange-500/5">
+                        View All Projects
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="py-24 px-6 relative">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div class="reveal-on-scroll">
+                        <span class="text-orange-500 font-mono text-xs mb-2 block">TRUSTED BY LEADERS</span>
+                        <h2 class="text-3xl md:text-4xl font-semibold tracking-tight mb-6 text-white">What Our
+                            Clients<br>Say About Us</h2>
+                        <p class="text-zinc-400 text-lg leading-relaxed mb-8">
+                            We take pride in delivering measurable results. Here is honest feedback from the businesses
+                            we've accelerated.
+                        </p>
+                        <div class="flex items-center gap-2">
+                            <div class="flex text-orange-500">
+                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                            </div>
+                            <span class="text-white font-medium text-sm">5.0/5.0 Rating</span>
+                        </div>
+                    </div>
+
+                    <div class="grid gap-6 reveal-on-scroll delay-200">
+                        <!-- Review 1 -->
+                        <div class="p-6 rounded-xl bg-zinc-900/50 border border-white/5 relative">
+                            <i data-lucide="quote" class="w-8 h-8 text-orange-500/20 absolute top-6 right-6"></i>
+                            <p class="text-zinc-300 text-sm leading-relaxed mb-6">
+                                "Brandlift transformed our entire lead generation process. The AI automation they
+                                implemented saved us 40 hours a week and increased conversions by 300%."
+                            </p>
+                            <div class="flex items-center gap-3">
+                                <div
+                                    class="w-10 h-10 rounded-full bg-zinc-800 flex items-center justify-center text-xs font-bold text-zinc-500">
+                                    JD
+                                </div>
+                                <div>
+                                    <h4 class="text-white text-sm font-medium">John Doe</h4>
+                                    <p class="text-xs text-zinc-500">CEO, TechStream</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Review 2 -->
+                        <div class="p-6 rounded-xl bg-zinc-900/50 border border-white/5 relative">
+                            <i data-lucide="quote" class="w-8 h-8 text-orange-500/20 absolute top-6 right-6"></i>
+                            <p class="text-zinc-300 text-sm leading-relaxed mb-6">
+                                "The security audit was an eye-opener. They found vulnerabilities we didn't know existed
+                                and
+                                fixed them immediately. Highly professional and knowledgeable."
+                            </p>
+                            <div class="flex items-center gap-3">
+                                <div
+                                    class="w-10 h-10 rounded-full bg-zinc-800 flex items-center justify-center text-xs font-bold text-zinc-500">
+                                    AS
+                                </div>
+                                <div>
+                                    <h4 class="text-white text-sm font-medium">Sarah Jenkins</h4>
+                                    <p class="text-xs text-zinc-500">CTO, SecurePay</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="py-24 px-6 relative border-t border-white/5" id="contact">
+            <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <!-- Left Side: Info -->
+                <div class="reveal-on-scroll">
+                    <span class="text-orange-500 font-mono text-xs mb-2 block">GET IN TOUCH</span>
+                    <h2 class="text-4xl md:text-5xl font-semibold tracking-tighter mb-6">Ready to <span
+                            class="text-orange-500">Scale?</span></h2>
+                    <p class="text-zinc-400 text-lg leading-relaxed mb-10">
+                        Whether you need a custom AI solution, valid security audit, or a high-performance website, we
+                        are
+                        ready to build it.
+                    </p>
+
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-12 h-12 bg-zinc-900 rounded-lg border border-white/5 flex items-center justify-center text-orange-500">
+                                <i data-lucide="mail" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-zinc-500 font-semibold uppercase tracking-wider">Email Us</p>
+                                <a href="mailto:info.brandliftonline.in"
+                                    class="text-white hover:text-orange-500 transition-colors">info.brandliftonline.in</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-12 h-12 bg-zinc-900 rounded-lg border border-white/5 flex items-center justify-center text-orange-500">
+                                <i data-lucide="map-pin" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-zinc-500 font-semibold uppercase tracking-wider">HQ</p>
+                                <a href="https://maps.app.goo.gl/VAEvKt85heux3pgb8" target="_blank"
+                                    class="text-zinc-300 hover:text-orange-500 transition-colors">Brandlift HQ,
+                                    Thrissur,</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Map Embed -->
+                    <div class="mt-10 relative group">
+                        <div
+                            class="absolute -inset-0.5 bg-gradient-to-r from-orange-500 to-amber-500 rounded-xl opacity-20 group-hover:opacity-60 blur transition duration-500">
+                        </div>
+                        <div class="relative rounded-xl overflow-hidden border border-white/10 bg-black">
+                            <div
+                                class="absolute inset-0 pointer-events-none z-10 box-border border-[2px] border-transparent mask-image-gradient">
+                            </div>
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3925.336!2d76.2723815!3d10.7470667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba7dd8b525931ab%3A0xecee9fab8d1fd88c!2sBrandliftonline!5e0!3m2!1sen!2sin!4v1709123456789!5m2!1sen!2sin"
+                                width="100%" height="250"
+                                style="border:0; filter: grayscale(100%) invert(100%) contrast(90%) hue-rotate(180deg) brightness(85%); opacity: 0.8;"
+                                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                            <a href="https://maps.app.goo.gl/VAEvKt85heux3pgb8" target="_blank"
+                                class="absolute bottom-2 left-2 bg-black/80 px-2 py-1 rounded text-[10px] text-orange-500 font-mono border border-orange-500/30 hover:bg-orange-500/10 transition-colors cursor-pointer z-20">
+                                LOC: Cheruthuruthy, Thrissur, Kerala
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Side: Form -->
+                <div class="reveal-on-scroll delay-200">
+                    <form id="contact-form" class="p-8 rounded-2xl bg-zinc-900/40 border border-white/5 glow-effect"
+                        action="https://formspree.io/f/mreezrek" method="POST">
+                        <div class="space-y-6">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <div class="space-y-2">
+                                    <label class="text-sm font-medium text-zinc-300">Name</label>
+                                    <input type="text" name="name" required
+                                        class="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-orange-500 transition-colors placeholder:text-zinc-700"
+                                        placeholder="Your Name">
+                                </div>
+                                <div class="space-y-2">
+                                    <label class="text-sm font-medium text-zinc-300">Email</label>
+                                    <input type="email" name="email" required
+                                        class="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-orange-500 transition-colors placeholder:text-zinc-700"
+                                        placeholder="your@email.com">
+                                </div>
+                            </div>
+
+                            <div class="space-y-2">
+                                <label class="text-sm font-medium text-zinc-300">Interested In</label>
+                                <select name="interest"
+                                    class="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-orange-500 transition-colors">
+                                    <option>AI Automation</option>
+                                    <option>Web Development</option>
+                                    <option>Digital Marketing</option>
+                                    <option>Cyber Security</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+
+                            <div class="space-y-2">
+                                <label class="text-sm font-medium text-zinc-300">Message</label>
+                                <textarea rows="4" name="message" required
+                                    class="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-orange-500 transition-colors placeholder:text-zinc-700"
+                                    placeholder="Tell us about your project..."></textarea>
+                            </div>
+
+                            <button type="submit" id="submit-btn"
+                                class="w-full py-4 bg-gradient-to-r from-orange-500 to-amber-600 rounded-lg text-black font-bold tracking-wide hover:opacity-90 transition-opacity">
+                                Send Message
+                            </button>
+                        </div>
+                    </form>
+                    <div id="form-status"
+                        class="hidden p-8 rounded-2xl bg-zinc-900/40 border border-green-500/20 text-center">
+                        <div
+                            class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-500/10 mb-6">
+                            <i data-lucide="check" class="w-8 h-8 text-green-500"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold text-white mb-2">Message Sent!</h3>
+                        <p class="text-zinc-400">Thank you for reaching out. We will get back to you shortly.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Coming Soon Section -->
+        <section id="future" class="py-32 px-6 relative overflow-hidden">
+            <div class="absolute inset-0 bg-orange-900/5 -z-10"></div>
+            <div class="max-w-2xl mx-auto text-center reveal-on-scroll">
+                <div
+                    class="inline-block px-3 py-1 bg-white/10 rounded-full text-[10px] tracking-widest font-bold uppercase text-white mb-6">
+                    Coming Late 2026</div>
+                <h2 class="text-4xl md:text-5xl font-semibold tracking-tighter text-white mb-6">The Next Evolution of AI
+                </h2>
+                <p class="text-zinc-400 mb-10 leading-relaxed">
+                    We are crafting a revolutionary platform designed to redefine digital intelligence. A seamless
+                    fusion of
+                    adaptive learning and autonomous execution.
+                </p>
+                <div class="flex justify-center">
+                    <div class="relative group">
+                        <div
+                            class="absolute -inset-1 bg-gradient-to-r from-orange-500 to-amber-600 rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200">
+                        </div>
+                        <button
+                            class="relative px-8 py-3 bg-black rounded-lg leading-none flex items-center divide-x divide-zinc-600">
+                            <span class="flex items-center space-x-5">
+                                <span class="pr-6 text-zinc-100 text-sm font-medium">Prepare for the Unveiling</span>
+                            </span>
+                            <span
+                                class="pl-6 text-orange-500 group-hover:text-orange-400 transition duration-200 text-sm">Join
+                                Waitlist</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- Footer -->
+        <footer class="border-t border-white/5 bg-zinc-950 pt-16 pb-8 reveal-on-scroll">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="flex flex-col md:flex-row justify-between items-start gap-12 mb-16">
+                    <div class="max-w-xs">
+                        <a href="#" class="flex items-center gap-2 mb-4">
+                            <img src="assets/brandlift-logo.png" alt="Brandlift"
+                                class="h-12 w-auto object-contain mt-1">
+                        </a>
+                        <p class="text-zinc-500 text-sm leading-relaxed">
+                            AI-Powered Digital Marketing &amp; Cyber Security Solutions. Helping businesses automate,
+                            optimize, and dominate.
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 w-full md:w-auto">
+                        <div>
+                            <h4 class="text-white text-xs font-semibold uppercase tracking-wider mb-4">Services</h4>
+                            <ul class="space-y-2 text-sm text-zinc-500">
+                                <li><a href="#" class="hover:text-orange-500 transition-colors">Digital Marketing</a>
+                                </li>
+                                <li><a href="#" class="hover:text-orange-500 transition-colors">Web Development</a></li>
+                                <li><a href="#" class="hover:text-orange-500 transition-colors">AI Automation</a></li>
+                                <li><a href="#" class="hover:text-orange-500 transition-colors">Cyber Security</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-white text-xs font-semibold uppercase tracking-wider mb-4">Company</h4>
+                            <ul class="space-y-2 text-sm text-zinc-500">
+                                <li><a href="#" class="hover:text-orange-500 transition-colors">About Us</a></li>
+                                <li><a href="#process" class="hover:text-orange-500 transition-colors">Process</a></li>
+                                <li><a href="#" class="hover:text-orange-500 transition-colors">Careers</a></li>
+                                <li><a href="#contact" class="hover:text-orange-500 transition-colors">Contact</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="text-white text-xs font-semibold uppercase tracking-wider mb-4">Legal</h4>
+                            <ul class="space-y-2 text-sm text-zinc-500">
+                                <li><a href="legal.html#privacy" class="hover:text-orange-500 transition-colors">Privacy
+                                        Policy</a></li>
+                                <li><a href="legal.html#terms" class="hover:text-orange-500 transition-colors">Terms of
+                                        Service</a></li>
+                                <li><a href="legal.html#cookies" class="hover:text-orange-500 transition-colors">Cookie
+                                        Policy</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-span-2 md:col-span-1">
+                            <h4 class="text-white text-xs font-semibold uppercase tracking-wider mb-4">Newsletter</h4>
+                            <p class="text-xs text-zinc-500 mb-2">Subscribe for AI & Security updates.</p>
+                            <div class="flex gap-2">
+                                <input type="email" placeholder="Email"
+                                    class="bg-zinc-900 border border-white/10 rounded px-2 py-1 text-xs text-white focus:outline-none focus:border-orange-500 w-full">
+                                <button
+                                    class="bg-orange-500 hover:bg-orange-600 text-black text-xs font-bold px-2 py-1 rounded transition-colors">→</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/5 gap-4">
+                    <div class="text-center md:text-left text-xs text-zinc-600">
+                        <p>© 2026 BrandLift. All Rights Reserved.</p>
+                        <p class="mt-1">Designed & Managed by BrandLift</p>
+                    </div>
+                    <div class="flex gap-4">
+                        <a href="#" class="text-zinc-600 hover:text-white transition-colors"><i data-lucide="instagram"
+                                class="w-4 h-4"></i></a>
+                        <a href="#" class="text-zinc-600 hover:text-white transition-colors"><i data-lucide="facebook"
+                                class="w-4 h-4"></i></a>
+                        <a href="https://x.com/brandlifton1ine" target="_blank"
+                            class="text-zinc-600 hover:text-white transition-colors"><i data-lucide="twitter"
+                                class="w-4 h-4"></i></a>
+                        <a href="#" class="text-zinc-600 hover:text-white transition-colors"><i data-lucide="linkedin"
+                                class="w-4 h-4"></i></a>
+                        <a href="https://api.whatsapp.com/send?phone=917902812336" target="_blank"
+                            class="text-zinc-600 hover:text-white transition-colors"><i data-lucide="phone"
+                                class="w-4 h-4"></i></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Floating WhatsApp Button (Cyber Style) -->
+        <a href="https://api.whatsapp.com/send?phone=917902812336" target="_blank"
+            class="fixed bottom-6 right-6 z-50 group flex items-center gap-3">
+            <span
+                class="bg-zinc-900 border border-green-500/30 text-green-400 text-xs font-mono px-3 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 translate-x-2 group-hover:translate-x-0">
+                Chat With Us
+            </span>
+            <div
+                class="relative w-14 h-14 bg-black/80 backdrop-blur-xl border border-green-500/50 rounded-full flex items-center justify-center hover:scale-110 transition-transform hover:shadow-[0_0_20px_rgba(34,197,94,0.3)]">
+                <i data-lucide="message-circle"
+                    class="w-6 h-6 text-green-500 group-hover:text-white transition-colors"></i>
+                <div
+                    class="absolute inset-0 border-2 border-transparent border-t-green-500/50 rounded-full animate-spin-slow">
+                </div>
+            </div>
+        </a>
+
+        <script>
+            // Initialize Lucide Icons
+            lucide.createIcons();
+
+            // Mouse Tracking Logic for Glow Effect
+            document.addEventListener('mousemove', (e) => {
+                const cards = document.querySelectorAll('.glow-effect');
+                cards.forEach(card => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+
+                    card.style.setProperty('--mouse-x', `${x}px`);
+                    card.style.setProperty('--mouse-y', `${y}px`);
+                });
+            });
+
+            // Intersection Observer for Scroll Animations
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        // Optional: Stop observing once visible to run only once
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.addEventListener('DOMContentLoaded', () => {
+                document.querySelectorAll('.reveal-on-scroll').forEach((element) => {
+                    observer.observe(element);
+                });
+
+                // --- 2. Decryption Text Effect Logic ---
+                const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()";
+                document.querySelectorAll('.decrypt-text').forEach(item => {
+                    let interval = null;
+                    item.addEventListener('mouseover', event => {
+                        let iteration = 0;
+                        clearInterval(interval);
+
+                        interval = setInterval(() => {
+                            event.target.innerText = event.target.innerText
+                                .split("")
+                                .map((letter, index) => {
+                                    if (index < iteration) {
+                                        return event.target.dataset.value[index];
+                                    }
+                                    return letters[Math.floor(Math.random() * 26)];
+                                })
+                                .join("");
+
+                            if (iteration >= event.target.dataset.value.length) {
+                                clearInterval(interval);
+                            }
+
+                            iteration += 1 / 3;
+                        }, 30);
+                    });
+                });
+
+                // --- 3. Holographic 3D Tilt Logic ---
+                document.querySelectorAll('.glow-effect').forEach(card => {
+                    // Add necessary classes for 3D context
+                    card.classList.add('tilt-card');
+
+                    // Wrap content in a div usually, but here we might just apply to the card itself
+                    // To do it properly, we need a container. Since we are modifying existing structure,
+                    // let's apply the transform directly to the card but be careful about existing transforms.
+                    // The .glow-effect cards already have transition scripts potentially?
+                    // Let's attach the listener.
+
+                    card.addEventListener('mousemove', (e) => {
+                        const rect = card.getBoundingClientRect();
+                        const x = e.clientX - rect.left;
+                        const y = e.clientY - rect.top;
+
+                        // Calculate rotation based on cursor position
+                        // Middle is 0,0
+                        const centerX = rect.width / 2;
+                        const centerY = rect.height / 2;
+
+                        const rotateX = ((y - centerY) / centerY) * -5; // Max 5 deg tilt
+                        const rotateY = ((x - centerX) / centerX) * 5;
+
+                        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+                    });
+
+                    card.addEventListener('mouseleave', () => {
+                        card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
+                    });
+                });
+
+                // --- 4. AI Terminal Typing Logic ---
+                const terminal = document.getElementById('ai-terminal');
+                const messages = [
+                    "Initializing Neural Core...",
+                    "Loading Data Modules...",
+                    "Optimizing Algorithms...",
+                    "Scanning for Threats...",
+                    "System Secure.",
+                    "Workflow Active."
+                ];
+                let msgIndex = 0;
+                let charIndex = 0;
+                let isDeleting = false;
+
+                function typeTerminal() {
+                    if (!terminal) return;
+                    const currentMsg = messages[msgIndex];
+
+                    if (isDeleting) {
+                        terminal.innerText = currentMsg.substring(0, charIndex - 1);
+                        charIndex--;
+                    } else {
+                        terminal.innerText = currentMsg.substring(0, charIndex + 1);
+                        charIndex++;
+                    }
+
+                    let typeSpeed = 50;
+
+                    if (!isDeleting && charIndex === currentMsg.length) {
+                        typeSpeed = 2000; // Pause at end
+                        isDeleting = true;
+                    } else if (isDeleting && charIndex === 0) {
+                        isDeleting = false;
+                        msgIndex = (msgIndex + 1) % messages.length;
+                        typeSpeed = 500;
+                    }
+
+                    setTimeout(typeTerminal, typeSpeed);
+                }
+
+
+                // Start the typing loop
+                typeTerminal();
+
+                // --- 5. Custom Neural Cursor Logic ---
+                const cursorDot = document.querySelector('.cursor-dot');
+
+                window.addEventListener('mousemove', (e) => {
+                    const posX = e.clientX;
+                    const posY = e.clientY;
+
+                    // Dot follows immediately
+                    cursorDot.style.left = `${posX}px`;
+                    cursorDot.style.top = `${posY}px`;
+                });
+
+                // --- 6. Neural Particle Background Logic ---
+                const canvas = document.getElementById('neural-canvas');
+                if (canvas) {
+                    const ctx = canvas.getContext('2d');
+                    let width, height;
+                    let particles = [];
+                    const particleCount = 60; // Adjust density
+                    const connectionDistance = 150;
+
+                    function resize() {
+                        width = canvas.width = canvas.offsetWidth;
+                        height = canvas.height = canvas.offsetHeight;
+                    }
+
+                    window.addEventListener('resize', resize);
+                    resize();
+
+                    class Particle {
+                        constructor() {
+                            this.x = Math.random() * width;
+                            this.y = Math.random() * height;
+                            this.vx = (Math.random() - 0.5) * 0.5;
+                            this.vy = (Math.random() - 0.5) * 0.5;
+                            this.size = Math.random() * 2 + 1;
+                        }
+
+                        update() {
+                            this.x += this.vx;
+                            this.y += this.vy;
+
+                            if (this.x < 0 || this.x > width) this.vx *= -1;
+                            if (this.y < 0 || this.y > height) this.vy *= -1;
+                        }
+
+                        draw() {
+                            ctx.beginPath();
+                            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                            ctx.fillStyle = 'rgba(249, 115, 22, 0.5)'; // Orange
+                            ctx.fill();
+                        }
+                    }
+
+                    function initParticles() {
+                        particles = [];
+                        for (let i = 0; i < particleCount; i++) {
+                            particles.push(new Particle());
+                        }
+                    }
+
+                    function animateParticles() {
+                        ctx.clearRect(0, 0, width, height);
+
+                        for (let i = 0; i < particles.length; i++) {
+                            particles[i].update();
+                            particles[i].draw();
+
+                            for (let j = i; j < particles.length; j++) {
+                                const dx = particles[i].x - particles[j].x;
+                                const dy = particles[i].y - particles[j].y;
+                                const distance = Math.hypot(dx, dy);
+
+                                if (distance < connectionDistance) {
+                                    ctx.beginPath();
+                                    ctx.strokeStyle = `rgba(249, 115, 22, ${0.1 * (1 - distance / connectionDistance)})`;
+                                    ctx.lineWidth = 1;
+                                    ctx.moveTo(particles[i].x, particles[i].y);
+                                    ctx.lineTo(particles[j].x, particles[j].y);
+                                    ctx.stroke();
+                                }
+                            }
+                        }
+                        requestAnimationFrame(animateParticles);
+                    }
+
+                    initParticles();
+                    animateParticles();
+                }
+            });
+
+            // --- 7. Force Scroll to Top on Refresh ---
+            if (history.scrollRestoration) {
+                history.scrollRestoration = 'manual';
+            }
+            window.onload = function () {
+                window.scrollTo(0, 0);
+            };
+        </script>
+
+        <script type="text/javascript">
+            !function () { if (!window.UnicornStudio) { window.UnicornStudio = { isInitialized: !1 }; var i = document.createElement("script"); i.src = "https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v1.4.29/dist/unicornStudio.umd.js", i.onload = function () { window.UnicornStudio.isInitialized || (UnicornStudio.init(), window.UnicornStudio.isInitialized = !0) }, (document.head || document.body).appendChild(i) } }();
+        </script>
+
+
+
+        <!-- Cookie Banner -->
+        <div id="cookie-banner">
+            <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+                <p class="text-sm text-zinc-400">We use cookies to enhance your experience. By continuing to visit this
+                    site you agree to our use of cookies.</p>
+                <div class="flex gap-4">
+                    <button onclick="acceptCookies()"
+                        class="bg-orange-500 hover:bg-orange-600 text-black text-xs font-bold px-4 py-2 rounded transition-colors">Accept</button>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            // Preloader Logic
+            window.addEventListener('load', () => {
+                const preloader = document.getElementById('preloader');
+                if (preloader) {
+                    setTimeout(() => {
+                        preloader.style.opacity = '0';
+                        preloader.style.visibility = 'hidden';
+                    }, 500);
+                }
+            });
+
+
+
+
+            // Cookie Banner Logic
+            const cookieBanner = document.getElementById('cookie-banner');
+            if (cookieBanner && !localStorage.getItem('cookiesAccepted')) {
+                setTimeout(() => {
+                    cookieBanner.classList.add('show');
+                }, 2000); // Delay appearance
+            }
+
+            function acceptCookies() {
+                const banner = document.getElementById('cookie-banner');
+                if (banner) banner.classList.remove('show');
+                localStorage.setItem('cookiesAccepted', 'true');
+            }
+
+            // --- Contact Form AJAX Logic ---
+            const form = document.getElementById('contact-form');
+
+            if (form) {
+                form.addEventListener("submit", async function (event) {
+                    event.preventDefault();
+                    const status = document.getElementById("form-status");
+                    const submitBtn = document.getElementById("submit-btn");
+                    const originalBtnText = submitBtn.innerText;
+                    const data = new FormData(event.target);
+
+                    submitBtn.disabled = true;
+                    submitBtn.innerText = "Sending...";
+
+                    fetch(event.target.action, {
+                        method: form.method,
+                        body: data,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    }).then(response => {
+                        if (response.ok) {
+                            form.classList.add('hidden');
+                            status.classList.remove('hidden');
+                            status.classList.add('block'); // Ensure it displays
+
+                            // Re-initialize icons if the success message has them (it does)
+                            lucide.createIcons();
+
+                            form.reset();
+                        } else {
+                            response.json().then(data => {
+                                if (Object.hasOwn(data, 'errors')) {
+                                    alert(data["errors"].map(error => error["message"]).join(", "));
+                                } else {
+                                    alert("Oops! There was a problem submitting your form");
+                                }
+                            })
+                        }
+                    }).catch(error => {
+                        alert("Oops! There was a problem submitting your form");
+                    }).finally(() => {
+                        submitBtn.disabled = false;
+                        submitBtn.innerText = originalBtnText;
+                    });
+                });
+            }
+        </script>
+</body>
+
+</html>

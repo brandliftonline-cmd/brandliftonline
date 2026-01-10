@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal & Compliance | BrandLift</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon.png">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        orange: {
+                            400: '#fb923c',
+                            500: '#f97316',
+                            600: '#ea580c',
+                        }
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .text-gradient-orange {
+            background: linear-gradient(135deg, #fff 0%, #f97316 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #09090b;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #27272a;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #f97316;
+        }
+    </style>
+</head>
+
+<body class="bg-black text-zinc-300 antialiased selection:bg-orange-500/30 selection:text-orange-200">
+
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full z-50 border-b border-white/5 bg-black/50 backdrop-blur-xl">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-2">
+                <img src="assets/brandlift-logo.png" alt="Brandlift" class="h-10 w-auto object-contain">
+            </a>
+            <a href="index.html"
+                class="text-xs font-medium text-zinc-400 hover:text-white transition-colors flex items-center gap-2">
+                <i data-lucide="arrow-left" class="w-4 h-4"></i> Back to Home
+            </a>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="pt-32 pb-16 px-6 border-b border-white/5 bg-zinc-900/10">
+        <div class="max-w-4xl mx-auto">
+            <span class="text-orange-500 font-mono text-xs mb-2 block">LEGAL & COMPLIANCE</span>
+            <h1 class="text-4xl md:text-5xl font-bold tracking-tight text-white mb-6">Terms & Policies</h1>
+            <p class="text-xl text-zinc-400">Transparency is the core of our partnership. Please read our policies
+                carefully.</p>
+        </div>
+    </header>
+
+    <!-- Content -->
+    <div class="max-w-4xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-4 gap-12">
+
+        <!-- Sidebar Nav -->
+        <aside class="md:col-span-1 sticky top-24 h-fit hidden md:block">
+            <nav class="space-y-1">
+                <a href="#privacy"
+                    class="block px-4 py-2 text-sm font-medium text-white bg-white/5 rounded-lg border border-white/5">Privacy
+                    Policy</a>
+                <a href="#terms"
+                    class="block px-4 py-2 text-sm font-medium text-zinc-500 hover:text-zinc-300 transition-colors">Terms
+                    of Service</a>
+                <a href="#cookies"
+                    class="block px-4 py-2 text-sm font-medium text-zinc-500 hover:text-zinc-300 transition-colors">Cookie
+                    Policy</a>
+            </nav>
+        </aside>
+
+        <!-- Main Text -->
+        <main class="md:col-span-3 space-y-16">
+
+            <!-- Privacy Policy -->
+            <section id="privacy" class="scroll-mt-32">
+                <h2 class="text-2xl font-semibold text-white mb-6 flex items-center gap-3">
+                    <i data-lucide="lock" class="w-6 h-6 text-orange-500"></i> Privacy Policy
+                </h2>
+                <div class="prose prose-invert prose-zinc max-w-none text-sm leading-relaxed">
+                    <p class="mb-4">Last Updated: January 10, 2026</p>
+                    <p class="mb-4">At BrandLift, we take your privacy seriously. This policy describes how we collect,
+                        use, and protect your personal information.</p>
+
+                    <h3 class="text-lg font-medium text-white mt-8 mb-4">1. Information We Collect</h3>
+                    <p class="mb-4">We collect information you provide directly to us, such as when you fill out a
+                        contact form, subscribe to our newsletter, or communicate with us. This may include your name,
+                        email address, phone number, and company name.</p>
+
+                    <h3 class="text-lg font-medium text-white mt-8 mb-4">2. How We Use Information</h3>
+                    <p class="mb-4">We use the information we collect to provide, maintain, and improve our services, to
+                        communicate with you, and to protect our company and our users.</p>
+                </div>
+            </section>
+
+            <hr class="border-white/5">
+
+            <!-- Terms of Service -->
+            <section id="terms" class="scroll-mt-32">
+                <h2 class="text-2xl font-semibold text-white mb-6 flex items-center gap-3">
+                    <i data-lucide="file-text" class="w-6 h-6 text-orange-500"></i> Terms of Service
+                </h2>
+                <div class="prose prose-invert prose-zinc max-w-none text-sm leading-relaxed">
+                    <p class="mb-4">By accessing or using our website and services, you agree to be bound by these Terms
+                        of Service.</p>
+
+                    <h3 class="text-lg font-medium text-white mt-8 mb-4">1. Services</h3>
+                    <p class="mb-4">BrandLift provides digital marketing, web development, and AI automation services.
+                        All services are subject to a separate service agreement signed by both parties.</p>
+
+                    <h3 class="text-lg font-medium text-white mt-8 mb-4">2. Intellectual Property</h3>
+                    <p class="mb-4">All content, features, and functionality on this website are owned by BrandLift and
+                        are protected by international copyright, trademark, and other intellectual property laws.</p>
+                </div>
+            </section>
+
+            <hr class="border-white/5">
+
+            <!-- Cookie Policy -->
+            <section id="cookies" class="scroll-mt-32">
+                <h2 class="text-2xl font-semibold text-white mb-6 flex items-center gap-3">
+                    <i data-lucide="cookie" class="w-6 h-6 text-orange-500"></i> Cookie Policy
+                </h2>
+                <div class="prose prose-invert prose-zinc max-w-none text-sm leading-relaxed">
+                    <p class="mb-4">We use cookies to enhance your browsing experience and analyze our traffic.</p>
+                    <ul class="list-disc pl-5 space-y-2 mb-4 text-zinc-400">
+                        <li><strong>Essential Cookies:</strong> Necessary for the website to function.</li>
+                        <li><strong>Analytics Cookies:</strong> Help us understand how visitors interact with our
+                            website.</li>
+                        <li><strong>Marketing Cookies:</strong> Used to track visitors across websites to display
+                            relevant ads.</li>
+                    </ul>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/5 bg-zinc-950 py-12 text-center text-zinc-600 text-sm">
+        <p>&copy; 2026 BrandLift. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
