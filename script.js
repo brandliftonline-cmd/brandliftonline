@@ -134,17 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Start the typing loop
     typeTerminal();
 
-    // --- 5. Custom Neural Cursor Logic ---
-    const cursorDot = document.querySelector('.cursor-dot');
 
-    window.addEventListener('mousemove', (e) => {
-        const posX = e.clientX;
-        const posY = e.clientY;
-
-        // Dot follows immediately
-        cursorDot.style.left = `${posX}px`;
-        cursorDot.style.top = `${posY}px`;
-    });
 
     // --- 6. Neural Particle Background Logic ---
     const canvas = document.getElementById('neural-canvas');

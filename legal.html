@@ -8,52 +8,21 @@
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon.png">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon.png">
-    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- External Dependencies -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        orange: {
-                            400: '#fb923c',
-                            500: '#f97316',
-                            600: '#ea580c',
-                        }
-                    },
-                    animation: {
-                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        .text-gradient-orange {
-            background: linear-gradient(135deg, #fff 0%, #f97316 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
+    <!-- Core Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+}
 
-        ::-webkit-scrollbar-track {
-            background: #09090b;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: #27272a;
-            border-radius: 4px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: #f97316;
-        }
-    </style>
+::-webkit-scrollbar-thumb:hover {
+background: #f97316;
+}
+</style>
 </head>
 
 <body class="bg-black text-zinc-300 antialiased selection:bg-orange-500/30 selection:text-orange-200">
@@ -174,6 +143,7 @@
     <script>
         lucide.createIcons();
     </script>
+    <script src="script.js"></script>
 </body>
 
 </html>

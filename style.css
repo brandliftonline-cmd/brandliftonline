@@ -628,21 +628,7 @@ body {
     color: #f97316;
 }
 
-/* --- 6. Custom Neural Cursor --- */
-.cursor-dot {
-    position: fixed;
-    top: 0;
-    left: 0;
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
-    z-index: 9999;
-    pointer-events: none;
-    width: 8px;
-    height: 8px;
-    background-color: #f97316;
-}
 
-/* Data Particles Canvas */
 #neural-canvas {
     position: absolute;
     top: 0;
