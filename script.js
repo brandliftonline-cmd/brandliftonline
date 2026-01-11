@@ -316,11 +316,14 @@ if (form) {
 }
 
 // --- Smooth Scroll without URL Hash Update ---
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+// --- Smooth Scroll without URL Hash Update ---
+document.querySelectorAll('a[href^="#"], a[data-scroll-to]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        const targetId = this.getAttribute('href').substring(1);
+
+        const targetId = this.dataset.scrollTo || this.getAttribute('href').substring(1);
         if (!targetId) return; // ignore empty hash or top
+
         const targetElement = document.getElementById(targetId);
 
         if (targetElement) {

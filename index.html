@@ -58,16 +58,16 @@
 
             <!-- Desktop Menu -->
             <div class="hidden md:flex gap-8 text-xs font-medium text-zinc-400">
-                <a href="#" class="hover:text-white transition-colors">Home</a>
-                <a href="#about" class="hover:text-white transition-colors">About</a>
-                <a href="#services" class="hover:text-white transition-colors">Services</a>
+                <a href="#" class="hover:text-white transition-colors" data-scroll-to="top">Home</a>
+                <a href="#" class="hover:text-white transition-colors" data-scroll-to="about">About</a>
+                <a href="#" class="hover:text-white transition-colors" data-scroll-to="services">Services</a>
                 <a href="blog.html" class="hover:text-white transition-colors">Insights</a>
-                <a href="#products" class="hover:text-white transition-colors">Products</a>
-                <a href="#tech-stack" class="hover:text-white transition-colors">Tech Stack</a>
+                <a href="#" class="hover:text-white transition-colors" data-scroll-to="products">Products</a>
+                <a href="#" class="hover:text-white transition-colors" data-scroll-to="tech-stack">Tech Stack</a>
             </div>
 
             <!-- Desktop Contact Button -->
-            <a href="#contact"
+            <a href="#" data-scroll-to="contact"
                 class="hidden md:flex bg-white/10 hover:bg-white/20 text-white text-xs font-medium px-4 py-2 rounded-full border border-white/5 transition-all">
                 Contact Us
             </a>
@@ -82,17 +82,17 @@
         <div id="mobile-menu"
             class="hidden md:hidden absolute top-16 left-0 w-full bg-black/95 backdrop-blur-xl border-b border-white/5 p-6 flex flex-col gap-6 transform transition-all duration-300 ease-in-out">
             <a href="#" class="text-sm font-medium text-zinc-400 hover:text-white transition-colors"
-                onclick="toggleMobileMenu()">Home</a>
-            <a href="#about" class="text-sm font-medium text-zinc-400 hover:text-white transition-colors"
-                onclick="toggleMobileMenu()">About</a>
-            <a href="#services" class="text-sm font-medium text-zinc-400 hover:text-white transition-colors"
-                onclick="toggleMobileMenu()">Services</a>
+                onclick="toggleMobileMenu()" data-scroll-to="top">Home</a>
+            <a href="#" class="text-sm font-medium text-zinc-400 hover:text-white transition-colors"
+                onclick="toggleMobileMenu()" data-scroll-to="about">About</a>
+            <a href="#" class="text-sm font-medium text-zinc-400 hover:text-white transition-colors"
+                onclick="toggleMobileMenu()" data-scroll-to="services">Services</a>
             <a href="blog.html" class="text-sm font-medium text-zinc-400 hover:text-white transition-colors"
                 onclick="toggleMobileMenu()">Insights</a>
-            <a href="#products" class="text-sm font-medium text-zinc-400 hover:text-white transition-colors"
-                onclick="toggleMobileMenu()">Products</a>
-            <a href="#tech-stack" class="text-sm font-medium text-zinc-400 hover:text-white transition-colors"
-                onclick="toggleMobileMenu()">Tech Stack</a>
+            <a href="#" class="text-sm font-medium text-zinc-400 hover:text-white transition-colors"
+                onclick="toggleMobileMenu()" data-scroll-to="products">Products</a>
+            <a href="#" class="text-sm font-medium text-zinc-400 hover:text-white transition-colors"
+                onclick="toggleMobileMenu()" data-scroll-to="tech-stack">Tech Stack</a>
             <a href="#contact"
                 class="bg-white/10 hover:bg-white/20 text-white text-sm font-medium px-4 py-3 rounded-lg border border-white/5 transition-all text-center"
                 onclick="toggleMobileMenu()">
@@ -126,11 +126,11 @@
             </p>
 
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-up delay-300">
-                <a href="#contact"
+                <a href="#" data-scroll-to="contact"
                     class="w-full sm:w-auto px-8 py-3 bg-white text-black text-sm font-semibold rounded hover:bg-zinc-200 transition-colors text-center">
                     Start Transformation
                 </a>
-                <a href="#services"
+                <a href="#" data-scroll-to="services"
                     class="w-full sm:w-auto px-8 py-3 text-zinc-400 hover:text-white text-sm font-medium transition-colors flex items-center justify-center gap-2 group">
                     Explore Solutions <i data-lucide="arrow-right"
                         class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
