@@ -598,30 +598,10 @@
             top: 0;
             left: 0;
             height: 100%;
-            width: 3px;
-            background: linear-gradient(to bottom, transparent, #f97316, transparent);
-            opacity: 0;
-            box-shadow: 0 0 10px #f97316;
+            width: 40px;
+            background: linear-gradient(90deg, transparent, #f97316, transparent);
             transform: translateX(-100%);
             animation: packetFlow 2s infinite linear;
-        }
-
-        /* 5. Mobile Touch Glow Effect */
-        .touch-glow {
-            position: fixed;
-            width: 150px;
-            height: 150px;
-            background: radial-gradient(circle, rgba(249, 115, 22, 0.4) 0%, rgba(249, 115, 22, 0) 70%);
-            transform: translate(-50%, -50%);
-            pointer-events: none;
-            z-index: 9999;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            mix-blend-mode: screen;
-        }
-
-        .touch-glow.active {
-            opacity: 1;
         }
 
         .data-packet.delay-1 {
@@ -2639,36 +2619,6 @@
 
             if (mobileMenuBtn) {
                 mobileMenuBtn.addEventListener('click', toggleMobileMenu);
-            }
-
-            // --- Mobile Touch Glow Logic ---
-            const touchGlow = document.createElement('div');
-            touchGlow.classList.add('touch-glow');
-            document.body.appendChild(touchGlow);
-
-            let hideTimeout;
-
-            window.addEventListener('touchstart', (e) => {
-                if (window.innerWidth >= 768) return; // Mobile only
-                touchGlow.classList.add('active');
-                updateGlowPosition(e.touches[0]);
-                clearTimeout(hideTimeout);
-            }, { passive: true });
-
-            window.addEventListener('touchmove', (e) => {
-                if (window.innerWidth >= 768) return;
-                updateGlowPosition(e.touches[0]);
-            }, { passive: true });
-
-            window.addEventListener('touchend', () => {
-                hideTimeout = setTimeout(() => {
-                    touchGlow.classList.remove('active');
-                }, 300);
-            });
-
-            function updateGlowPosition(touch) {
-                touchGlow.style.left = touch.clientX + 'px';
-                touchGlow.style.top = touch.clientY + 'px';
             }
 
 
