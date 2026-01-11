@@ -598,10 +598,30 @@
             top: 0;
             left: 0;
             height: 100%;
-            width: 40px;
-            background: linear-gradient(90deg, transparent, #f97316, transparent);
+            width: 3px;
+            background: linear-gradient(to bottom, transparent, #f97316, transparent);
+            opacity: 0;
+            box-shadow: 0 0 10px #f97316;
             transform: translateX(-100%);
             animation: packetFlow 2s infinite linear;
+        }
+
+        /* 5. Mobile Touch Glow Effect */
+        .touch-glow {
+            position: fixed;
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle, rgba(249, 115, 22, 0.4) 0%, rgba(249, 115, 22, 0) 70%);
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            mix-blend-mode: screen;
+        }
+
+        .touch-glow.active {
+            opacity: 1;
         }
 
         .data-packet.delay-1 {
@@ -1044,7 +1064,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <header class="relative pt-32 pb-20 md:pt-48 md:pb-32 px-6 overflow-hidden">
+    <header class="relative pt-24 pb-16 md:pt-48 md:pb-32 px-6 overflow-hidden">
         <div data-us-project="cqcLtDwfoHqqRPttBbQE" class="absolute top-0 left-0 -z-10 w-full h-full"></div>
 
         <div class="max-w-4xl mx-auto text-center">
@@ -1055,7 +1075,7 @@
             </div>
 
             <h1
-                class="text-5xl md:text-7xl lg:text-8xl font-semibold tracking-tighter leading-[1.1] mb-6 animate-fade-up delay-100">
+                class="text-4xl md:text-7xl lg:text-8xl font-semibold tracking-tighter leading-[1.1] mb-6 animate-fade-up delay-100">
                 <span>Automate.</span>
                 <span class="text-zinc-500">Optimize.</span>
                 <span class="text-gradient-orange">Dominate.</span>
@@ -1143,10 +1163,10 @@
     </div>
 
     <!-- Who We Are -->
-    <section id="about" class="py-24 px-6 relative overflow-hidden border-b border-white/5">
+    <section id="about" class="py-16 md:py-24 px-6 relative overflow-hidden border-b border-white/5">
         <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-                <h2 class="text-3xl md:text-4xl font-semibold tracking-tight mb-6">Who We Are</h2>
+                <h2 class="text-2xl md:text-4xl font-semibold tracking-tight mb-6">Who We Are</h2>
                 <p class="text-zinc-400 text-lg leading-relaxed mb-8">
                     Brandlift is a next-generation digital agency focused on AI implementation, automation, and
                     cyber-secure digital growth.
@@ -1257,10 +1277,10 @@
     </section>
 
     <!-- Main Services Grid (Bento Style) -->
-    <section id="services" class="py-24 px-6 relative">
+    <section id="services" class="py-16 md:py-24 px-6 relative">
         <div class="max-w-7xl mx-auto">
             <div class="mb-16">
-                <h2 class="text-3xl md:text-4xl font-semibold tracking-tight mb-4">Holistic Digital Ecosystems</h2>
+                <h2 class="text-2xl md:text-4xl font-semibold tracking-tight mb-4">Holistic Digital Ecosystems</h2>
                 <p class="text-zinc-400 max-w-2xl">We don't just build websites; we build intelligent business
                     infrastructures.</p>
             </div>
@@ -1482,12 +1502,12 @@
     </section>
 
     <!-- AI Features Breakdown -->
-    <section class="py-24 bg-zinc-900/20 border-y border-white/5 relative overflow-hidden">
+    <section class="py-16 md:py-24 bg-zinc-900/20 border-y border-white/5 relative overflow-hidden">
         <canvas id="neural-canvas"></canvas>
         <div class="max-w-7xl mx-auto px-6 relative z-10">
             <div class="text-center mb-16 max-w-2xl mx-auto">
                 <span class="text-orange-500 font-mono text-xs mb-2 block">POWERED BY INTELLIGENCE</span>
-                <h2 class="text-3xl md:text-4xl font-semibold tracking-tight mb-4 text-gradient-orange">How We Use AI to
+                <h2 class="text-2xl md:text-4xl font-semibold tracking-tight mb-4 text-gradient-orange">How We Use AI to
                     Power Your Business
                 </h2>
                 <p class="text-zinc-400">Smarter decisions. Faster execution. Better results. We integrate AI across
@@ -1564,7 +1584,7 @@
     </section>
 
     <!-- Global Security Intelligence -->
-    <section class="py-24 px-6 border-b border-white/5 relative overflow-hidden">
+    <section class="py-16 md:py-24 px-6 border-b border-white/5 relative overflow-hidden">
         <div class="absolute inset-0 bg-green-900/5 -z-10"></div>
         <div class="max-w-7xl mx-auto">
             <div class="flex flex-col lg:flex-row gap-12">
@@ -1630,11 +1650,11 @@
     </section>
 
     <!-- How We Work Process -->
-    <section id="process" class="py-24 px-6">
+    <section id="process" class="py-16 md:py-24 px-6">
         <div class="max-w-7xl mx-auto">
             <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
                 <div>
-                    <h2 class="text-3xl font-semibold tracking-tight mb-2">How We Work</h2>
+                    <h2 class="text-2xl md:text-3xl font-semibold tracking-tight mb-2">How We Work</h2>
                     <p class="text-zinc-400 text-sm">Our proven process for delivering digital excellence.</p>
                 </div>
                 <a href="#contact"
@@ -1704,7 +1724,7 @@
     </section>
 
     <!-- Tech Stack Arsenal -->
-    <section id="tech-stack" class="py-24 border-b border-white/5 bg-black">
+    <section id="tech-stack" class="py-16 md:py-24 border-b border-white/5 bg-black">
         <div class="max-w-7xl mx-auto px-6 mb-12 text-center">
             <span class="text-zinc-500 font-mono text-xs tracking-widest uppercase">Powered By Modern Logic</span>
             <h2 class="text-3xl font-semibold text-white mt-4">Our Tech Arsenal</h2>
@@ -1786,7 +1806,7 @@
         </div>
 
         <!-- Why Choose Us -->
-        <section class="py-24 bg-gradient-to-b from-zinc-900/0 to-zinc-900/30">
+        <section class="py-16 md:py-24 bg-gradient-to-b from-zinc-900/0 to-zinc-900/30">
             <div class="max-w-7xl mx-auto px-6">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                     <div>
@@ -1836,7 +1856,7 @@
         </section>
 
         <!-- Testimonials Section -->
-        <section class="py-24 px-6 border-b border-white/5 bg-zinc-900/20">
+        <section class="py-16 md:py-24 px-6 border-b border-white/5 bg-zinc-900/20">
             <div class="max-w-7xl mx-auto">
                 <h2 class="text-3xl md:text-4xl font-semibold text-center mb-16 text-white">Trusted by <span
                         class="text-orange-500">Innovators</span></h2>
@@ -1899,11 +1919,11 @@
 
 
         <!-- Products / Featured Work -->
-        <section id="products" class="py-24 px-6 relative border-t border-white/5 bg-zinc-900/10">
+        <section id="products" class="py-16 md:py-24 px-6 relative border-t border-white/5 bg-zinc-900/10">
             <div class="max-w-7xl mx-auto">
                 <div class="mb-16 text-center max-w-2xl mx-auto reveal-on-scroll">
                     <span class="text-orange-500 font-mono text-xs mb-2 block">PORTFOLIO</span>
-                    <h2 class="text-3xl md:text-4xl font-semibold tracking-tight mb-4 text-white">Featured <span
+                    <h2 class="text-2xl md:text-4xl font-semibold tracking-tight mb-4 text-white">Featured <span
                             class="text-orange-500">Innovation</span></h2>
                     <p class="text-zinc-400">
                         A showcase of our high-impact projects, ranging from AI automation systems to immersive web
@@ -2007,12 +2027,12 @@
         </section>
 
         <!-- Testimonials -->
-        <section class="py-24 px-6 relative">
+        <section class="py-16 md:py-24 px-6 relative">
             <div class="max-w-7xl mx-auto">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                     <div class="reveal-on-scroll">
                         <span class="text-orange-500 font-mono text-xs mb-2 block">TRUSTED BY LEADERS</span>
-                        <h2 class="text-3xl md:text-4xl font-semibold tracking-tight mb-6 text-white">What Our
+                        <h2 class="text-2xl md:text-4xl font-semibold tracking-tight mb-6 text-white">What Our
                             Clients<br>Say About Us</h2>
                         <p class="text-zinc-400 text-lg leading-relaxed mb-8">
                             We take pride in delivering measurable results. Here is honest feedback from the businesses
@@ -2075,12 +2095,12 @@
         </section>
 
         <!-- Contact Section -->
-        <section class="py-24 px-6 relative border-t border-white/5" id="contact">
+        <section class="py-16 md:py-24 px-6 relative border-t border-white/5" id="contact">
             <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
                 <!-- Left Side: Info -->
                 <div class="reveal-on-scroll">
                     <span class="text-orange-500 font-mono text-xs mb-2 block">GET IN TOUCH</span>
-                    <h2 class="text-4xl md:text-5xl font-semibold tracking-tighter mb-6">Ready to <span
+                    <h2 class="text-3xl md:text-5xl font-semibold tracking-tighter mb-6">Ready to <span
                             class="text-orange-500">Scale?</span></h2>
                     <p class="text-zinc-400 text-lg leading-relaxed mb-10">
                         Whether you need a custom AI solution, valid security audit, or a high-performance website, we
@@ -2196,13 +2216,13 @@
         </section>
 
         <!-- Coming Soon Section -->
-        <section id="future" class="py-32 px-6 relative overflow-hidden">
+        <section id="future" class="py-20 md:py-32 px-6 relative overflow-hidden">
             <div class="absolute inset-0 bg-orange-900/5 -z-10"></div>
             <div class="max-w-2xl mx-auto text-center reveal-on-scroll">
                 <div
                     class="inline-block px-3 py-1 bg-white/10 rounded-full text-[10px] tracking-widest font-bold uppercase text-white mb-6">
                     Coming Late 2026</div>
-                <h2 class="text-4xl md:text-5xl font-semibold tracking-tighter text-white mb-6">The Next Evolution of AI
+                <h2 class="text-3xl md:text-5xl font-semibold tracking-tighter text-white mb-6">The Next Evolution of AI
                 </h2>
                 <p class="text-zinc-400 mb-10 leading-relaxed">
                     We are crafting a revolutionary platform designed to redefine digital intelligence. A seamless
@@ -2619,6 +2639,36 @@
 
             if (mobileMenuBtn) {
                 mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+            }
+
+            // --- Mobile Touch Glow Logic ---
+            const touchGlow = document.createElement('div');
+            touchGlow.classList.add('touch-glow');
+            document.body.appendChild(touchGlow);
+
+            let hideTimeout;
+
+            window.addEventListener('touchstart', (e) => {
+                if (window.innerWidth >= 768) return; // Mobile only
+                touchGlow.classList.add('active');
+                updateGlowPosition(e.touches[0]);
+                clearTimeout(hideTimeout);
+            }, { passive: true });
+
+            window.addEventListener('touchmove', (e) => {
+                if (window.innerWidth >= 768) return;
+                updateGlowPosition(e.touches[0]);
+            }, { passive: true });
+
+            window.addEventListener('touchend', () => {
+                hideTimeout = setTimeout(() => {
+                    touchGlow.classList.remove('active');
+                }, 300);
+            });
+
+            function updateGlowPosition(touch) {
+                touchGlow.style.left = touch.clientX + 'px';
+                touchGlow.style.top = touch.clientY + 'px';
             }
 
 
