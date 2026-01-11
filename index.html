@@ -1000,6 +1000,8 @@
             <a href="#" class="flex items-center gap-2">
                 <img src="assets/brandlift-logo.png" alt="Brandlift" class="h-11 w-auto object-contain mt-1">
             </a>
+
+            <!-- Desktop Menu -->
             <div class="hidden md:flex gap-8 text-xs font-medium text-zinc-400">
                 <a href="#" class="hover:text-white transition-colors">Home</a>
                 <a href="#about" class="hover:text-white transition-colors">About</a>
@@ -1007,8 +1009,35 @@
                 <a href="#products" class="hover:text-white transition-colors">Products</a>
                 <a href="#tech-stack" class="hover:text-white transition-colors">Tech Stack</a>
             </div>
+
+            <!-- Desktop Contact Button -->
             <a href="#contact"
-                class="bg-white/10 hover:bg-white/20 text-white text-xs font-medium px-4 py-2 rounded-full border border-white/5 transition-all">
+                class="hidden md:flex bg-white/10 hover:bg-white/20 text-white text-xs font-medium px-4 py-2 rounded-full border border-white/5 transition-all">
+                Contact Us
+            </a>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-zinc-400 hover:text-white focus:outline-none">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu"
+            class="hidden md:hidden absolute top-16 left-0 w-full bg-black/95 backdrop-blur-xl border-b border-white/5 p-6 flex flex-col gap-6 transform transition-all duration-300 ease-in-out">
+            <a href="#" class="text-sm font-medium text-zinc-400 hover:text-white transition-colors"
+                onclick="toggleMobileMenu()">Home</a>
+            <a href="#about" class="text-sm font-medium text-zinc-400 hover:text-white transition-colors"
+                onclick="toggleMobileMenu()">About</a>
+            <a href="#services" class="text-sm font-medium text-zinc-400 hover:text-white transition-colors"
+                onclick="toggleMobileMenu()">Services</a>
+            <a href="#products" class="text-sm font-medium text-zinc-400 hover:text-white transition-colors"
+                onclick="toggleMobileMenu()">Products</a>
+            <a href="#tech-stack" class="text-sm font-medium text-zinc-400 hover:text-white transition-colors"
+                onclick="toggleMobileMenu()">Tech Stack</a>
+            <a href="#contact"
+                class="bg-white/10 hover:bg-white/20 text-white text-sm font-medium px-4 py-3 rounded-lg border border-white/5 transition-all text-center"
+                onclick="toggleMobileMenu()">
                 Contact Us
             </a>
         </div>
@@ -2525,6 +2554,25 @@
                     }, 500);
                 }
             });
+
+            // --- Mobile Menu Logic ---
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            function toggleMobileMenu() {
+                if (mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.remove('hidden');
+                    mobileMenuBtn.innerHTML = '<i data-lucide="x" class="w-6 h-6"></i>';
+                } else {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenuBtn.innerHTML = '<i data-lucide="menu" class="w-6 h-6"></i>';
+                }
+                lucide.createIcons();
+            }
+
+            if (mobileMenuBtn) {
+                mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+            }
 
 
 
