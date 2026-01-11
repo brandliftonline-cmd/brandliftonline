@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 | Signal Lost</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .error-code {
+            font-size: 10rem;
+            line-height: 1;
+            font-weight: 700;
+            background: linear-gradient(135deg, #ef4444 0%, #f97316 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            opacity: 0.8;
+            position: relative;
+        }
+
+        .pulse-ring {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            border: 1px solid rgba(249, 115, 22, 0.3);
+            animation: ripple 2s infinite;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+        }
+
+        @keyframes ripple {
+            0% {
+                transform: translate(-50%, -50%) scale(0.8);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translate(-50%, -50%) scale(2);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body
+    class="bg-black text-white h-screen flex flex-col items-center justify-center overflow-hidden selection:bg-orange-500/30 selection:text-orange-200">
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+
+    <!-- Background Canvas -->
+    <canvas id="neural-canvas"></canvas>
+
+    <div class="relative z-10 text-center px-6">
+        <div class="mb-4 relative inline-block">
+            <h1 class="error-code glitch-text" data-text="404">404</h1>
+            <div class="pulse-ring"></div>
+            <div class="pulse-ring delay-300"></div>
+        </div>
+
+        <h2 class="text-2xl md:text-4xl font-mono text-white mb-6 tracking-tight">SIGNAL LOST</h2>
+
+        <p class="text-zinc-400 max-w-md mx-auto mb-10 leading-relaxed">
+            The neural pathway you are looking for has been disconnected or does not exist.
+            <span class="block mt-2 text-orange-500/80 font-mono text-sm">[Re-routing protocols available]</span>
+        </p>
+
+        <a href="index.html"
+            class="inline-flex items-center gap-2 px-8 py-3 bg-white text-black text-sm font-semibold rounded hover:bg-zinc-200 transition-colors group">
+            <i data-lucide="arrow-left" class="w-4 h-4 group-hover:-translate-x-1 transition-transform"></i>
+            Return to Base
+        </a>
+    </div>
+
+    <div class="absolute bottom-8 text-center w-full text-zinc-600 text-[10px] font-mono">
+        SYSTEM.ERR_404_NOT_FOUND // BRANDLIFT.AI
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
