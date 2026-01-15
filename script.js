@@ -319,6 +319,50 @@ if (form) {
 }
 
 // --- Smooth Scroll without URL Hash Update ---
+// --- Newsletter Subscription Logic ---
+const newsletterBtn = document.getElementById('newsletter-btn');
+const newsletterEmail = document.getElementById('newsletter-email');
+
+if (newsletterBtn && newsletterEmail) {
+    newsletterBtn.addEventListener('click', async () => {
+        const email = newsletterEmail.value.trim();
+        if (!email) {
+            alert("Please enter a valid email address.");
+            return;
+        }
+
+        const originalText = newsletterBtn.innerText;
+        newsletterBtn.disabled = true;
+        newsletterBtn.innerText = "...";
+
+        try {
+            const response = await fetch('/api/subscribe', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({ email })
+            });
+
+            const result = await response.json();
+
+            if (response.ok) {
+                alert("Subscribed successfully! Thank you.");
+                newsletterEmail.value = "";
+            } else {
+                throw new Error(result.error || 'Subscription failed');
+            }
+        } catch (error) {
+            console.error('Subscription error:', error);
+            alert("Oops! Subscription failed: " + error.message);
+        } finally {
+            newsletterBtn.disabled = false;
+            newsletterBtn.innerText = originalText;
+        }
+    });
+}
+
 // --- Smooth Scroll without URL Hash Update ---
 document.querySelectorAll('a[href^="#"], a[data-scroll-to]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {

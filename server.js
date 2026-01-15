@@ -55,6 +55,39 @@ app.post('/api/send-email', async (req, res) => {
     }
 });
 
+// Subscribe endpoint
+app.post('/api/subscribe', async (req, res) => {
+    try {
+        const { email } = req.body;
+
+        if (!email) {
+            return res.status(400).json({ error: 'Email is required' });
+        }
+
+        const data = await resend.emails.send({
+            from: 'Brandlift Newsletter <onboarding@resend.dev>',
+            to: ['brandliftonline@gmail.com'],
+            subject: 'New Newsletter Subscriber',
+            html: `
+                <h2>New Subscriber</h2>
+                <p><strong>Email:</strong> ${email}</p>
+            `
+        });
+
+        if (data.error) {
+            console.error('Resend Subscribe Error:', data.error);
+            return res.status(500).json({ error: data.error.message });
+        }
+
+        console.log('New subscriber:', data);
+        res.status(200).json({ message: 'Subscribed successfully', data });
+
+    } catch (error) {
+        console.error('Server Error:', error);
+        res.status(500).json({ error: 'Internal server error', details: error.message });
+    }
+});
+
 // Fallback for SPA or just catch-all to index.html if needed (optional for static sites)
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
