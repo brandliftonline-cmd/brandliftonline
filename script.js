@@ -276,42 +276,45 @@ if (form) {
         const status = document.getElementById("form-status");
         const submitBtn = document.getElementById("submit-btn");
         const originalBtnText = submitBtn.innerText;
-        const data = new FormData(event.target);
+
+        // Collect form data as JSON
+        const formData = new FormData(event.target);
+        const jsonData = Object.fromEntries(formData.entries());
 
         submitBtn.disabled = true;
         submitBtn.innerText = "Sending...";
 
-        fetch(event.target.action, {
-            method: form.method,
-            body: data,
-            headers: {
-                'Accept': 'application/json'
-            }
-        }).then(response => {
+        try {
+            const response = await fetch('/api/send-email', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify(jsonData)
+            });
+
+            const result = await response.json();
+
             if (response.ok) {
                 form.classList.add('hidden');
                 status.classList.remove('hidden');
                 status.classList.add('block'); // Ensure it displays
 
-                // Re-initialize icons if the success message has them (it does)
-                lucide.createIcons();
+                // Re-initialize icons if the success message has them
+                if (window.lucide) window.lucide.createIcons();
 
                 form.reset();
             } else {
-                response.json().then(data => {
-                    if (Object.hasOwn(data, 'errors')) {
-                        alert(data["errors"].map(error => error["message"]).join(", "));
-                    } else {
-                        alert("Oops! There was a problem submitting your form");
-                    }
-                })
+                throw new Error(result.error || 'Submission failed');
             }
-        }).catch(error => {
-            alert("Oops! There was a problem submitting your form");
-        }).finally(() => {
+        } catch (error) {
+            console.error('Submission error:', error);
+            alert("Oops! There was a problem submitting your form: " + error.message);
+        } finally {
             submitBtn.disabled = false;
             submitBtn.innerText = originalBtnText;
-        });
+        }
     });
 }
 
