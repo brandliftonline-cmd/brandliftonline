@@ -93,11 +93,6 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-// Run properly on local development, export for Netlify
-if (require.main === module) {
-    app.listen(port, () => {
-        console.log(`Server running at http://localhost:${port}`);
-    });
-}
-
-module.exports = app;
+app.listen(port, () => {
+    console.log(`Server running at http://localhost:${port}`);
+});
