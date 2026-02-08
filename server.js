@@ -23,6 +23,11 @@ app.post('/api/send-email', async (req, res) => {
     try {
         const { name, email, interest, message } = req.body;
 
+        if (!process.env.RESEND_API_KEY) {
+            console.error('RESEND_API_KEY is missing');
+            return res.status(500).json({ error: 'Missing Server Configuration (API Key)' });
+        }
+
         if (!name || !email || !message) {
             return res.status(400).json({ error: 'Missing required fields' });
         }
