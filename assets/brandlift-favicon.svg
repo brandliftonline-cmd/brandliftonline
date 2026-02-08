@@ -1,0 +1,6 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <!-- Rounded Square Background -->
+  <rect x="0" y="0" width="64" height="64" rx="16" fill="#f97316"/>
+  <!-- White Letter B (Rounded Style) -->
+  <path fill="#ffffff" d="M20 16 C 20 13.79 21.79 12 24 12 L 34 12 C 42 12 47 16 47 21 C 47 24.5 45 27.5 41 29 C 45.5 30 49 33.5 49 39 C 49 45 44 50 35 50 L 24 50 C 21.79 50 20 48.21 20 46 L 20 16 Z M 28 20 L 28 27 L 33 27 C 37 27 39 25.5 39 23.5 C 39 21.5 37 20 33 20 L 28 20 Z M 28 34 L 28 42 L 34 42 C 38.5 42 41 40 41 38 C 41 36 38.5 34 34 34 L 28 34 Z"/>
+</svg>

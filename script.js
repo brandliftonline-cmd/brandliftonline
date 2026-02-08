@@ -385,3 +385,27 @@ document.querySelectorAll('a[href^="#"], a[data-scroll-to]').forEach(anchor => {
         }
     });
 });
+
+// --- Magnetic Button Logic ---
+document.querySelectorAll('.magnet-button').forEach(btn => {
+    btn.addEventListener('mousemove', (e) => {
+        const rect = btn.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+
+        // Strength of the pull (lower number = stronger pull/more movement)
+        // Let's keep it subtle: 20% of movement
+        btn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+    });
+
+    btn.addEventListener('mouseleave', () => {
+        btn.style.transform = 'translate(0px, 0px)';
+        // Reset transition smooth
+        btn.style.transition = 'transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+    });
+
+    btn.addEventListener('mouseenter', () => {
+        // Remove smooth transition for instant follow
+        btn.style.transition = 'transform 0.1s linear';
+    });
+});

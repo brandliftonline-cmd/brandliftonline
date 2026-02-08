@@ -8,7 +8,7 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap"
         rel="stylesheet">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.png">
+    <link rel="icon" type="image/svg+xml" sizes="any" href="assets/brandlift-favicon.svg">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon.png">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon.png">
     <link rel="stylesheet" href="style.css">
@@ -127,11 +127,11 @@
 
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-up delay-300">
                 <a href="#" data-scroll-to="contact"
-                    class="w-full sm:w-auto px-8 py-3 bg-white text-black text-sm font-semibold rounded hover:bg-zinc-200 transition-colors text-center">
+                    class="magnet-button w-full sm:w-auto px-8 py-3 bg-white text-black text-sm font-semibold rounded hover:bg-zinc-200 transition-colors text-center">
                     Start Transformation
                 </a>
                 <a href="#" data-scroll-to="services"
-                    class="w-full sm:w-auto px-8 py-3 text-zinc-400 hover:text-white text-sm font-medium transition-colors flex items-center justify-center gap-2 group">
+                    class="magnet-button w-full sm:w-auto px-8 py-3 text-zinc-400 hover:text-white text-sm font-medium transition-colors flex items-center justify-center gap-2 group">
                     Explore Solutions <i data-lucide="arrow-right"
                         class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
                 </a>
@@ -904,10 +904,10 @@
                         <div class="flex items-center gap-4 mb-6">
                             <div
                                 class="w-12 h-12 rounded-full bg-zinc-800 flex items-center justify-center text-orange-500 font-bold">
-                                JD</div>
+                                AB</div>
                             <div>
-                                <h4 class="text-white font-medium">John Doe</h4>
-                                <p class="text-xs text-zinc-500">CTO, TechCorp</p>
+                                <h4 class="text-white font-medium">Abhiram</h4>
+                                <p class="text-xs text-zinc-500">CEO, TechStream</p>
                             </div>
                         </div>
                         <p class="text-zinc-400 text-sm leading-relaxed">
@@ -921,10 +921,10 @@
                         <div class="flex items-center gap-4 mb-6">
                             <div
                                 class="w-12 h-12 rounded-full bg-zinc-800 flex items-center justify-center text-orange-500 font-bold">
-                                AS</div>
+                                AV</div>
                             <div>
-                                <h4 class="text-white font-medium">Sarah Lee</h4>
-                                <p class="text-xs text-zinc-500">Founder, StartupX</p>
+                                <h4 class="text-white font-medium">Anvith</h4>
+                                <p class="text-xs text-zinc-500">CTO, SecurePay</p>
                             </div>
                         </div>
                         <p class="text-zinc-400 text-sm leading-relaxed">
@@ -938,9 +938,9 @@
                         <div class="flex items-center gap-4 mb-6">
                             <div
                                 class="w-12 h-12 rounded-full bg-zinc-800 flex items-center justify-center text-orange-500 font-bold">
-                                MR</div>
+                                KI</div>
                             <div>
-                                <h4 class="text-white font-medium">Michael Ross</h4>
+                                <h4 class="text-white font-medium">Kiran</h4>
                                 <p class="text-xs text-zinc-500">CEO, FinServe</p>
                             </div>
                         </div>
@@ -1056,81 +1056,135 @@
                 </div>
 
                 <div class="mt-12 text-center">
-                    <button
-                        class="px-6 py-3 border border-white/10 hover:border-orange-500/50 rounded-full text-xs font-medium text-white transition-all hover:bg-orange-500/5">
+                    <a href="blog.html"
+                        class="px-6 py-3 border border-white/10 hover:border-orange-500/50 rounded-full text-xs font-medium text-white transition-all hover:bg-orange-500/5 inline-block">
                         View All Projects
-                    </button>
+                    </a>
                 </div>
             </div>
         </section>
 
-        <!-- Testimonials -->
-        <section class="py-16 md:py-24 px-6 relative">
+        <!-- Latest Insights (Blog Preview) -->
+        <section id="insights" class="py-16 md:py-24 px-6 bg-zinc-900/10 border-b border-white/5">
             <div class="max-w-7xl mx-auto">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                    <div class="reveal-on-scroll">
-                        <span class="text-orange-500 font-mono text-xs mb-2 block">TRUSTED BY LEADERS</span>
-                        <h2 class="text-2xl md:text-4xl font-semibold tracking-tight mb-6 text-white">What Our
-                            Clients<br>Say About Us</h2>
-                        <p class="text-zinc-400 text-lg leading-relaxed mb-8">
-                            We take pride in delivering measurable results. Here is honest feedback from the businesses
-                            we've accelerated.
-                        </p>
-                        <div class="flex items-center gap-2">
-                            <div class="flex text-orange-500">
-                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                                <i data-lucide="star" class="w-4 h-4 fill-current"></i>
-                            </div>
-                            <span class="text-white font-medium text-sm">5.0/5.0 Rating</span>
-                        </div>
-                    </div>
+                <div class="mb-16 text-center max-w-2xl mx-auto reveal-on-scroll">
+                    <span class="text-orange-500 font-mono text-xs mb-2 block">KNOWLEDGE HUB</span>
+                    <h2 class="text-2xl md:text-4xl font-semibold tracking-tight mb-4 text-white">Latest <span
+                            class="text-orange-500">Insights</span></h2>
+                    <p class="text-zinc-400">
+                        Trends, strategies, and technical deep-dives from our team.
+                    </p>
+                </div>
 
-                    <div class="grid gap-6 reveal-on-scroll delay-200">
-                        <!-- Review 1 -->
-                        <div class="p-6 rounded-xl bg-zinc-900/50 border border-white/5 relative">
-                            <i data-lucide="quote" class="w-8 h-8 text-orange-500/20 absolute top-6 right-6"></i>
-                            <p class="text-zinc-300 text-sm leading-relaxed mb-6">
-                                "Brandlift transformed our entire lead generation process. The AI automation they
-                                implemented saved us 40 hours a week and increased conversions by 300%."
-                            </p>
-                            <div class="flex items-center gap-3">
-                                <div
-                                    class="w-10 h-10 rounded-full bg-zinc-800 flex items-center justify-center text-xs font-bold text-zinc-500">
-                                    JD
-                                </div>
-                                <div>
-                                    <h4 class="text-white text-sm font-medium">John Doe</h4>
-                                    <p class="text-xs text-zinc-500">CEO, TechStream</p>
-                                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Article 1 -->
+                    <article
+                        class="group bg-zinc-900/30 border border-white/5 rounded-2xl overflow-hidden hover:border-orange-500/30 transition-all duration-300 card-hover glow-effect reveal-on-scroll">
+                        <div class="h-48 bg-zinc-800/50 relative overflow-hidden">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10"></div>
+                            <!-- Placeholder for article image or abstract pattern -->
+                            <div
+                                class="absolute inset-0 opacity-30 bg-[url('https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1000&auto=format&fit=crop')] bg-cover bg-center transition-transform duration-700 group-hover:scale-110">
+                            </div>
+                            <div class="absolute bottom-4 left-4 z-20">
+                                <span
+                                    class="px-2 py-1 text-[10px] font-mono border border-orange-500/30 text-orange-400 bg-orange-500/10 rounded">AI
+                                    TECHNOLOGY</span>
                             </div>
                         </div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 text-zinc-500 text-xs mb-3 font-mono">
+                                <span><i data-lucide="calendar" class="w-3 h-3 inline mr-1"></i> Oct 12, 2025</span>
+                            </div>
+                            <h3
+                                class="text-lg font-semibold mb-2 group-hover:text-orange-400 transition-colors text-white">
+                                The Future
+                                of Generative AI</h3>
+                            <p class="text-zinc-400 text-sm leading-relaxed mb-4 line-clamp-2">
+                                How large language models are reshaping customer service and workflows.
+                            </p>
+                            <a href="blog.html"
+                                class="inline-flex items-center text-orange-500 text-xs font-bold hover:gap-2 transition-all group-hover:text-orange-400">
+                                READ ARTICLE <i data-lucide="arrow-right" class="w-3 h-3 ml-1"></i>
+                            </a>
+                        </div>
+                    </article>
 
-                        <!-- Review 2 -->
-                        <div class="p-6 rounded-xl bg-zinc-900/50 border border-white/5 relative">
-                            <i data-lucide="quote" class="w-8 h-8 text-orange-500/20 absolute top-6 right-6"></i>
-                            <p class="text-zinc-300 text-sm leading-relaxed mb-6">
-                                "The security audit was an eye-opener. They found vulnerabilities we didn't know existed
-                                and
-                                fixed them immediately. Highly professional and knowledgeable."
-                            </p>
-                            <div class="flex items-center gap-3">
-                                <div
-                                    class="w-10 h-10 rounded-full bg-zinc-800 flex items-center justify-center text-xs font-bold text-zinc-500">
-                                    AS
-                                </div>
-                                <div>
-                                    <h4 class="text-white text-sm font-medium">Sarah Jenkins</h4>
-                                    <p class="text-xs text-zinc-500">CTO, SecurePay</p>
-                                </div>
+                    <!-- Article 2 -->
+                    <article
+                        class="group bg-zinc-900/30 border border-white/5 rounded-2xl overflow-hidden hover:border-green-500/30 transition-all duration-300 card-hover glow-effect reveal-on-scroll delay-100">
+                        <div class="h-48 bg-zinc-800/50 relative overflow-hidden">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10"></div>
+                            <div
+                                class="absolute inset-0 opacity-30 bg-[url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1000&auto=format&fit=crop')] bg-cover bg-center transition-transform duration-700 group-hover:scale-110">
+                            </div>
+                            <div class="absolute bottom-4 left-4 z-20">
+                                <span
+                                    class="px-2 py-1 text-[10px] font-mono border border-green-500/30 text-green-400 bg-green-500/10 rounded">CYBER
+                                    SECURITY</span>
                             </div>
                         </div>
-                    </div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 text-zinc-500 text-xs mb-3 font-mono">
+                                <span><i data-lucide="calendar" class="w-3 h-3 inline mr-1"></i> Oct 08, 2025</span>
+                            </div>
+                            <h3
+                                class="text-lg font-semibold mb-2 group-hover:text-green-400 transition-colors text-white">
+                                Zero Trust
+                                Architecture</h3>
+                            <p class="text-zinc-400 text-sm leading-relaxed mb-4 line-clamp-2">
+                                Why perimeter-based security is failing and how Zero Trust protects assets.
+                            </p>
+                            <a href="blog.html"
+                                class="inline-flex items-center text-green-500 text-xs font-bold hover:gap-2 transition-all group-hover:text-green-400">
+                                READ ARTICLE <i data-lucide="arrow-right" class="w-3 h-3 ml-1"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Article 3 -->
+                    <article
+                        class="group bg-zinc-900/30 border border-white/5 rounded-2xl overflow-hidden hover:border-blue-500/30 transition-all duration-300 card-hover glow-effect reveal-on-scroll delay-200">
+                        <div class="h-48 bg-zinc-800/50 relative overflow-hidden">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10"></div>
+                            <div
+                                class="absolute inset-0 opacity-30 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1000&auto=format&fit=crop')] bg-cover bg-center transition-transform duration-700 group-hover:scale-110">
+                            </div>
+                            <div class="absolute bottom-4 left-4 z-20">
+                                <span
+                                    class="px-2 py-1 text-[10px] font-mono border border-blue-500/30 text-blue-400 bg-blue-500/10 rounded">WEB
+                                    DEV</span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center gap-2 text-zinc-500 text-xs mb-3 font-mono">
+                                <span><i data-lucide="calendar" class="w-3 h-3 inline mr-1"></i> Sep 29, 2025</span>
+                            </div>
+                            <h3
+                                class="text-lg font-semibold mb-2 group-hover:text-blue-400 transition-colors text-white">
+                                Neural Web
+                                Optimization</h3>
+                            <p class="text-zinc-400 text-sm leading-relaxed mb-4 line-clamp-2">
+                                Building high-performance web applications for human users and AI agents.
+                            </p>
+                            <a href="blog.html"
+                                class="inline-flex items-center text-blue-500 text-xs font-bold hover:gap-2 transition-all group-hover:text-blue-400">
+                                READ ARTICLE <i data-lucide="arrow-right" class="w-3 h-3 ml-1"></i>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="mt-12 text-center">
+                    <a href="blog.html"
+                        class="px-6 py-3 border border-white/10 hover:border-orange-500/50 rounded-full text-xs font-medium text-white transition-all hover:bg-orange-500/5 inline-block">
+                        View All Insights
+                    </a>
                 </div>
             </div>
         </section>
+
+
 
         <!-- Contact Section -->
         <section class="py-16 md:py-24 px-6 relative border-t border-white/5" id="contact">
@@ -1349,12 +1403,15 @@
                 <div class="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/5 gap-4">
                     <div class="text-center md:text-left text-xs text-zinc-600">
                         <p>© 2026 BrandLift. All Rights Reserved.</p>
-                        <p class="mt-1">Designed & Managed by BrandLift</p>
+                        <p class="mt-1">Designed & Managed by BrandLift <span class="text-zinc-700 ml-2">v1.1.0</span>
+                        </p>
                     </div>
                     <div class="flex gap-4">
-                        <a href="#" class="text-zinc-600 hover:text-white transition-colors"><i data-lucide="instagram"
+                        <a href="https://www.instagram.com/brandliftonline" target="_blank"
+                            class="text-zinc-600 hover:text-white transition-colors"><i data-lucide="instagram"
                                 class="w-4 h-4"></i></a>
-                        <a href="#" class="text-zinc-600 hover:text-white transition-colors"><i data-lucide="facebook"
+                        <a href="https://www.facebook.com/people/Brandlift/61579928931919/" target="_blank"
+                            class="text-zinc-600 hover:text-white transition-colors"><i data-lucide="facebook"
                                 class="w-4 h-4"></i></a>
                         <a href="https://x.com/brandlifton1ine" target="_blank"
                             class="text-zinc-600 hover:text-white transition-colors"><i data-lucide="twitter"
